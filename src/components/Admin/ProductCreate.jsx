@@ -44,46 +44,49 @@ const upload = async (e) => {
         onChange={upload}
         />
         <input
-            type=""
-            name=""
-            id=""
-            value={}
-            placeholder=""
+            type="altText"
+            name="altText"
+            id="altText"
+            value={altText}
+            placeholder="altText for image"
         />
                 <input
-            type=""
-            name=""
-            id=""
-            value={}
-            placeholder=""
+            type="productName"
+            name="productName"
+            id="productName"
+            value={productName}
+            placeholder="Enter Product Name"
         />
                 <input
-            type=""
-            name=""
-            id=""
-            value={}
-            placeholder=""
+            type="price"
+            name="price"
+            id="price"
+            accept='number'
+            value={price}
+            placeholder="Enter price (numbers only)"
         />
                 <input
-            type=""
-            name=""
-            id=""
-            value={}
-            placeholder=""
+            type="description"
+            name="description"
+            id="description"
+            value={description}
+            placeholder="Product Description"
         />
                 <input
-            type=""
-            name=""
-            id=""
-            value={}
-            placeholder=""
+            type="quantity"
+            name="quantity"
+            id="quantity"
+            accept="number"
+            value={quantity}
+            placeholder="quantity"
         />
-                <input
-            type=""
-            name=""
-            id=""
-            value={}
-            placeholder=""
+        {/* For this item, I want to create a drop down menu */}
+        <input
+            type="tag"
+            name="tag"
+            id="tag"
+            value={tag}
+            placeholder="tag"
         />
 
         </form>
