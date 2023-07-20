@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import './App.css'
+import ProductCreate from './components/Admin/ProductCreate'
 
 function App() {
   
 
   return (
     <>
-      <Admin />
+      <ProductCreate />
     </>
   )
 }
