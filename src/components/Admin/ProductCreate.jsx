@@ -1,6 +1,8 @@
 import React, { useEffect, useId, useState }from 'react'
-import axios from 'axios'
+import { TextField, Button, Radio, FormControlLabel, FormControl, FormLabel, RadioGroup } from '@mui/material'
 
+import axios from 'axios'
+import "./ProductCreate.css"
 function ProductCreate() {
 const [ selectedFile, setSelectedFile ] = useState(null)
 const [ altText, setAltText ] = useState('')
@@ -37,72 +39,99 @@ const upload = async (e) => {
             })
     }catch(err){
         console.log(err)
+        console.log(tag)
     }
         
     }
 
+let handleTagChange = (e) => {
+    setTag(e.target.value)
+
+}
+    
+
 
     return (
     <>
-       
-        <form action="POST">
+        <form action="POST"
+        id="form">
+            <h2>Upload Product </h2>
         <input
         type="file"
         accept="image/*"
+        id="file"
         onChange={e => setSelectedFile(e.target.files[0])}
         />
-        <input
+        <TextField
             type="altText"
             name="altText"
             id="altText"
+            variant='outlined'
+            size='small'
+            label="Alt Text"
             value={altText}
             onChange={e => setAltText(e.target.value)}
-            placeholder="altText for image"
+            placeholder='Alt Text'
         />
-                <input
+        <TextField
             type="productName"
             name="productName"
             id="productName"
+            variant='outlined'
+            size='small'
+            label="Product Name"
             value={productName}
             onChange={e => setProductName(e.target.value)}
-            placeholder="Enter Product Name"
+            placeholder="Product Name"
         />
-                <input
+        <TextField
             type="price"
             name="price"
             id="price"
             accept='number'
+            variant='outlined'
+            size='small'
+            label="Price (Numbers only)"
             value={price}
             onChange={e => setPrice(e.target.value)}
-            placeholder="Enter price (numbers only)"
+            placeholder="$0"
         />
-                <input
+            <TextField
             type="description"
             name="description"
             id="description"
+            variant='outlined'
+            size='small'
+            label=" Product Description"
             value={description}
             onChange={e => setDescription(e.target.value)}
-            placeholder="Product Description"
+            placeholder='Product Description'
         />
-                <input
+            <TextField
             type="quantity"
             name="quantity"
             id="quantity"
             accept="number"
+            variant='outlined'
+            size='small'
+            label=" Product Quantity"
             value={quantity}
             onChange={e => setQuantity(e.target.value)}
             placeholder="quantity"
         />
         {/* For this item, I want to create a drop down menu */}
-        <input
-            type="tag"
-            name="tag"
-            id="tag"
-            value={tag}
-            onChange={e => setTag(e.target.value)}
-            placeholder="tag"
-        />
-        <button type="submit" onClick={upload}>Submit</button>
+    <FormControl>
+         <FormLabel id="Tag">Tag</FormLabel>
+
+         <RadioGroup >
+        <FormControlLabel value="Fall" onChange={handleTagChange} control={<Radio />} label="Fall" />
+        <FormControlLabel value="Winter" onChange={handleTagChange} control={<Radio />} label="Winter" />
+        <FormControlLabel value="Spring" onChange={handleTagChange} control={<Radio />} label="Spring" />
+        <FormControlLabel value="Summer" onChange={handleTagChange} control={<Radio />} label="Summer" />
+        </RadioGroup>
+
+    </FormControl>
+<Button variant='contained' type="submit" onClick={upload}>Submit</Button>
 
         </form>
     </>
