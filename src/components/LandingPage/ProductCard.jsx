@@ -27,6 +27,8 @@ function ProductCard( { product }) {
     setExpanded(!expanded);
   };
 
+
+
   return (
     <Card sx={{ maxWidth: 300 }}>
       <CardMedia
