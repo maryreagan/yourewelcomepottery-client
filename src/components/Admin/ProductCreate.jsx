@@ -3,13 +3,13 @@ import { TextField, Button, Radio, FormControlLabel, FormControl, FormLabel, Rad
 
 import axios from 'axios'
 import "./ProductCreate.css"
-function ProductCreate() {
+function ProductCreate( {productCreated, setProductCreated}) {
 const [ selectedFile, setSelectedFile ] = useState(null)
 const [ altText, setAltText ] = useState('')
 const [ productName , setProductName ] = useState('')
 const [ description, setDescription ] = useState('')
-const [price, setPrice ] = useState(0)
-const [ quantity, setQuantity ] = useState(0)
+const [price, setPrice ] = useState("")
+const [ quantity, setQuantity ] = useState("")
 const [ tag, setTag ] = useState("")
 
 const upload = async (e) => {
@@ -33,21 +33,28 @@ const upload = async (e) => {
             const response = await axios.post('http://127.0.0.1:4000/products/create', 
             formData,{
             headers: {
+                'Authorization':localStorage.getItem('token'),
                 'Content-Type':'multipart/form-data'
             },
-           
             })
+            window.alert("Product created successfully")
+            setProductCreated(!productCreated)
     }catch(err){
-        console.log(err)
-        console.log(tag)
+        if ((err.response.data.message).includes("fields") || (err.response.data.message).includes("buffer")){
+            window.alert("fill in all required fields")
+        }
+        if ((err.response.data.message).includes("Cast")){
+            window.alert("One or more of your inputs is invalid") 
     }
         
     }
+}
 
 let handleTagChange = (e) => {
     setTag(e.target.value)
 
 }
+
     
 
 
@@ -114,7 +121,7 @@ let handleTagChange = (e) => {
             accept="number"
             variant='outlined'
             size='small'
-            label=" Product Quantity"
+            label="Quantity (Numbers only)"
             value={quantity}
             onChange={e => setQuantity(e.target.value)}
             placeholder="quantity"

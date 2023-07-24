@@ -18,9 +18,11 @@ let response = await axios.post('http://127.0.0.1:4000/admin/register',
         },
        
         })
+
+    window.alert("User Created Successfully")
 }
 catch(err){
-    console.log(err)
+    window.alert(err.response.data.message)
 }
 }
   return (
