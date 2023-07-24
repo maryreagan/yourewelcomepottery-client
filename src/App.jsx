@@ -4,6 +4,7 @@ import Admin from './components/Admin/Admin'
 import ProductCreate from './components/Admin/ProductCreate'
 import LandingPage from './components/LandingPage/LandingPage'
 import Bio from "./components/Bio/Bio"
+import Footer from "./components/footer/footer"
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import { createTheme, ThemeProvider } from "@mui/material"
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="bio" element={<Bio />} />
       </Routes>
     </BrowserRouter>
+    <Footer />
   </ThemeProvider>
   );
 }
