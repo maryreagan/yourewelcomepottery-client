@@ -30,6 +30,8 @@ function Auth({updateLocalStorage, email, setEmail}) {
           let decodedToken = jwt_decode(token);
   
          updateLocalStorage(data.token,(decodedToken.email));
+         setEmail("")
+         setPassword("")
     
           
         } catch (err) {
@@ -141,10 +143,10 @@ function Auth({updateLocalStorage, email, setEmail}) {
         id="password"
         variant='outlined'
         size='small'
-        label="password"
+        label="Password"
         value={password}
         onChange={e => setPassword(e.target.value)}
-        placeholder="Product Name"
+        placeholder="Password"
     />
     <Button variant = "contained" type="submit" onClick = {(e) => {updateUser(e); setResetPassword(false)}}>Update Password</Button>
     </div>
