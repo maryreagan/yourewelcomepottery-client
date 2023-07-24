@@ -8,6 +8,8 @@ import Navbar from "./components/Navbar/Navbar"
 import Footer from "./components/footer/footer"
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import { createTheme, ThemeProvider } from "@mui/material"
+import Cancel from "./components/Checkout/Cancel"
+import Success from "./components/Checkout/Success"
 
 const theme = createTheme( {
   palette: {
@@ -22,19 +24,21 @@ const theme = createTheme( {
 
 
 function App() {
-    return (
+  return (
 
     <ThemeProvider theme={theme}>
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="admin" element={<Admin />} />
-        <Route path="bio" element={<Bio />} />
-      </Routes>
-    </BrowserRouter>
-    <Footer />
-  </ThemeProvider>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="admin" element={<Admin />} />
+          <Route path="bio" element={<Bio />} />
+          <Route path="success" element={<Success />} />
+          <Route path="cancel" element={<Cancel />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
+    </ThemeProvider>
   );
 }
 
