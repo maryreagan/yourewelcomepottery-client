@@ -24,3 +24,8 @@
     font-size: 45px;
     text-align: center;
 }
+
+.white-badge .MuiBadge-badge {
+    background-color: white;
+    color: #2196f3;
+}

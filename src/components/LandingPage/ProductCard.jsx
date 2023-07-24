@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import { styled } from "@mui/material/styles";
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { Button, CardActionArea, CardActions } from "@mui/material";
@@ -7,6 +7,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import IconButton from "@mui/material/IconButton";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { CartContext } from '../../CartContext';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -21,7 +22,8 @@ const ExpandMore = styled((props) => {
 
 function ProductCard( { product }) {
 
-    const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const cart = useContext(CartContext)
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -46,7 +48,7 @@ function ProductCard( { product }) {
 
       <CardActions disableSpacing>
         {product.quantity > 0 ? (
-          <Button startIcon={<ShoppingCartIcon />}>Add to Cart</Button>
+          <Button startIcon={<ShoppingCartIcon />}onClick={() => cart.addOneToCart({product})}>Add to Cart</Button>
         ) : (
           <Typography paragraph color="primary.main">SOLD OUT</Typography>
         )}

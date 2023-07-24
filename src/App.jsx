@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import { createTheme, ThemeProvider } from "@mui/material"
 import Cancel from "./components/Checkout/Cancel"
 import Success from "./components/Checkout/Success"
+import CartProvider from './CartContext'
 
 const theme = createTheme( {
   palette: {
@@ -27,16 +28,18 @@ function App() {
   return (
 
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="admin" element={<Admin />} />
-          <Route path="bio" element={<Bio />} />
-          <Route path="success" element={<Success />} />
-          <Route path="cancel" element={<Cancel />} />
-        </Routes>
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="admin" element={<Admin />} />
+            <Route path="bio" element={<Bio />} />
+            <Route path="success" element={<Success />} />
+            <Route path="cancel" element={<Cancel />} />
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
       <Footer />
     </ThemeProvider>
   );
