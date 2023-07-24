@@ -45,7 +45,11 @@ function ProductCard( { product }) {
       </CardContent>
 
       <CardActions disableSpacing>
-        <Button startIcon={<ShoppingCartIcon />}>Add to Cart</Button>
+        {product.quantity > 0 ? (
+          <Button startIcon={<ShoppingCartIcon />}>Add to Cart</Button>
+        ) : (
+          <Typography paragraph color="primary.main">SOLD OUT</Typography>
+        )}
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
@@ -57,10 +61,8 @@ function ProductCard( { product }) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-            <Typography paragraph>
-            {product.description}
-          </Typography>
-          </CardContent>
+          <Typography paragraph>{product.description}</Typography>
+        </CardContent>
       </Collapse>
     </Card>
   );
