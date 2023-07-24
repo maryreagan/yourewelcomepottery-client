@@ -43,7 +43,7 @@ function Admin() {
         <Auth updateLocalStorage={updateLocalStroage} email={email} setEmail={setEmail} />) :(
           <>
         <h3>Welcome: {email} </h3>
-        <Button variant="contained" onClick={logout}>Logout</Button>
+        <Button id="logout" variant="contained" onClick={logout}>Logout</Button>
         <Register />
         <ProductCreate setProductCreated = {setProductCreated} productCreated={productCreated} />
         <ProductCardUpdate productCreated = {productCreated}/>

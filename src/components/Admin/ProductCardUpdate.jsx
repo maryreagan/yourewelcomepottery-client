@@ -76,6 +76,12 @@ function ProductCardUpdate({ productCreated }) {
                 })
                 setRefresh(!refresh)
                 handleCloseModel()
+                setAltText("")
+                setProductName("")
+                setDescription("")
+                setPrice("")
+                setQuantity("")
+                setTag("")
         }catch(err){
             console.log(err)
 

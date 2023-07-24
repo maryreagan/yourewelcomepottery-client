@@ -39,6 +39,12 @@ const upload = async (e) => {
             })
             window.alert("Product created successfully")
             setProductCreated(!productCreated)
+            setAltText("")
+            setProductName("")
+            setDescription("")
+            setPrice("")
+            setQuantity("")
+            setTag("")
     }catch(err){
         if ((err.response.data.message).includes("fields") || (err.response.data.message).includes("buffer")){
             window.alert("fill in all required fields")
