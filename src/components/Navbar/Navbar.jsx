@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {  Tabs, Tab } from "@mui/material"
-import logo from "/pottery.jpg";
+import logo from "/logo.png";
 import './Navbar.css'
 
 function Navbar() {
