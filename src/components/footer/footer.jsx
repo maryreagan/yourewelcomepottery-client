@@ -8,18 +8,29 @@ function Footer() {
     window.location.href = mailTo
   }
   return (
-    <div id="footer">
-      <h3 >GET IN TOUCH</h3>
-      <h4>Location: 309 Plus Park DriveStudio 147, Nashville, TN 37217</h4>
-      <h4>Hours of Operations: By Appointment Only</h4>
-      <button onClick={handleEmail}>
-      <MarkunreadIcon fontSize="large" />
-      </button>
-        
-        
-    
-        </div>
-  )
+    <div>
+      <h2>GET IN TOUCH</h2>
+      <h3>Phone Number : 111-111-1111</h3>
+      <h3>Location: 309 Plus Park DriveStudio 147, Nashville, TN 37217</h3>
+      <h3>Hours of Operations: By Appointment Only</h3>
+
+      <a
+        href="javascript:void(
+        window.open(
+          'https://form.jotform.com/232046323497153',
+          'blank',
+          'scrollbars=yes,
+          toolbar=no,
+          width=700,
+          height=500'
+        )
+      )
+    "
+      >
+        Get Our Newsletter!
+      </a>
+    </div>
+  );
 }
 
 export default Footer

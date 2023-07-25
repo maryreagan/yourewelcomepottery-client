@@ -1,7 +1,8 @@
 .links{
     display: flex;
+    flex-wrap:wrap;
     justify-content: center;
-    padding-top: 6em;
+    padding-top: 3em;
     gap: 3em;
 }
 
@@ -16,3 +17,4 @@
   gap:4em;
   padding: 8em;
 }
+
