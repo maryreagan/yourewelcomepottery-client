@@ -14,7 +14,7 @@ import Cancel from "./components/Checkout/Cancel"
 
 
 
-const theme = createTheme( {
+const theme = createTheme({
   palette: {
     primary: {
       main: "#a04d31",
@@ -27,23 +27,23 @@ const theme = createTheme( {
 
 
 function App() {
-   const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState([]);
 
-   const handleAddToCart = (product) => {
-     setCart((prevCart) => [...prevCart, product]);
-   };
+  const handleAddToCart = (product) => {
+    setCart((prevCart) => [...prevCart, product]);
+  };
 
-   const removeFromCart = (product) => {
+  const removeFromCart = (product) => {
 
-     setCart((prevCart) => prevCart.filter((item) => item._id!== product._id));
-   }
+    setCart((prevCart) => prevCart.filter((item) => item._id !== product._id));
+  }
 
-     useEffect(() => {
-       console.log("Current Cart:", cart);
-     }, [cart]);
+  useEffect(() => {
+    console.log("Current Cart:", cart);
+  }, [cart]);
 
 
-    return (
+  return (
 
     <ThemeProvider theme={theme}>
     <BrowserRouter>
