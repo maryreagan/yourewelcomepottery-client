@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {  Tabs, Tab } from "@mui/material"
-import logo from "/pottery.jpg";
+import logo from "/logo.png";
 import './Navbar.css'
 
 function Navbar() {
@@ -31,6 +31,7 @@ function Navbar() {
       <Tab label="About" component={Link} to="/bio">About</Tab>
 
           </Tabs>
+      <Link className="cart-link" to="/cart">Cart</Link>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import headshot from "/headshot.jpeg"
+import headshot from "/headshot.jpg"
 import "./Bio.css"
 
 function Bio() {
