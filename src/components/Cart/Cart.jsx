@@ -1,8 +1,40 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Typography, Button } from "@mui/material";
 
 function Cart( { cart, removeFromCart } ) {
-    let total = 0
+
+const [totalPrice, setTotalPrice] = useState(0)
+  
+  useEffect(() => {
+    // Calculate the total price whenever the cart changes
+    let totalPrice = 0;
+    cart.forEach((item) => {
+      totalPrice += item.price * item.quantity;
+    });
+    setTotalPrice(totalPrice);
+  }, [cart]);
+
+    
+
+
+  const checkout = async () => {
+    await fetch("http://localhost:8080/checkout", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ items: cart.items }),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        if (res.url) {
+          window.location.assign(res.url);
+        }
+      });
+  };
+
   return (
     <div>
       <Typography variant="h4">Shopping Cart</Typography>
@@ -11,15 +43,16 @@ function Cart( { cart, removeFromCart } ) {
       ) : (
         cart.map((item) => (
           <div key={item.id}>
-            
             <Typography variant="body1">{item.productName}</Typography>
             <Typography variant="body2">${item.price}</Typography>
             <Button onClick={() => removeFromCart(item)}>Remove</Button>
-            {/* Add total */}
-            <p>Total {total += item.price}</p>
+            
+            
           </div>
         ))
       )}
+      <Typography variant="body1">Total: ${totalPrice}</Typography>
+      <Button onClick={checkout}> Checkout </Button>
     </div>
   );
 }

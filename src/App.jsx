@@ -9,6 +9,8 @@ import Footer from "./components/footer/footer"
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import { createTheme, ThemeProvider } from "@mui/material"
 import Cart from "./components/Cart/Cart"
+import Success from "./components/Checkout/Success"
+import Cancel from "./components/Checkout/Cancel"
 
 
 const theme = createTheme( {
@@ -44,12 +46,14 @@ function App() {
 
     <ThemeProvider theme={theme}>
     <BrowserRouter>
-      <Navbar />
+      <Navbar cart={cart}/>
       <Routes>
         <Route path="/" element={<LandingPage handleAddToCart={handleAddToCart}/>} />
         <Route path="admin" element={<Admin />} />
         <Route path="bio" element={<Bio />} />
         <Route path="cart" element={<Cart cart={cart} removeFromCart={removeFromCart}/>} />
+        <Route path="success" element={<Success />}/>
+        <Route path="cancel" element={<Cancel />}/>
       </Routes>
     </BrowserRouter>
     <Footer />
