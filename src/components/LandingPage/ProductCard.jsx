@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { styled } from "@mui/material/styles";
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { Button, CardActionArea, CardActions } from "@mui/material";
@@ -20,13 +20,18 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-function ProductCard( { product }) {
+function ProductCard( { product, onAddToCart } ) {
 
     const [expanded, setExpanded] = useState(false);
+    
     const theme = useTheme();
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
+  };
+
+  const handleAddToCart = () => {
+    onAddToCart(product);
   };
 
   return (
@@ -48,7 +53,7 @@ function ProductCard( { product }) {
 
       <CardActions disableSpacing sx={{ backgroundColor: theme.palette.secondary.main }}>
         {product.quantity > 0 ? (
-          <Button startIcon={<ShoppingCartIcon />}>Add to Cart</Button>
+          <Button onClick={handleAddToCart} startIcon={<ShoppingCartIcon />}>Add to Cart</Button>
         ) : (
           <Typography paragraph color="primary.main">
             SOLD OUT

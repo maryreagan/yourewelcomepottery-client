@@ -31,6 +31,7 @@ function Navbar() {
       <Tab label="About" component={Link} to="/bio">About</Tab>
 
           </Tabs>
+      <Link className="cart-link" to="/cart">Cart</Link>
     </div>
   );
 }
