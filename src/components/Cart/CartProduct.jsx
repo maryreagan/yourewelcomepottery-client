@@ -8,7 +8,7 @@ function CartProduct ({ _id, quantity }){
     //const {_id: id, quantity} = currentProduct
     console.log(_id);
     const {products, getProductData} = ProductComponent()
-    const productData = getProductData(_id)
+    const productData = getProductData(_id._id)
 
     return (
         <>
