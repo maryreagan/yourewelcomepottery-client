@@ -121,7 +121,7 @@ function Navbar() {
               <p>Items in your cart:</p>
               {cart.items.map((currentProduct, idx) => (
                 /* current product is a hook to CartProduct component */
-                <CartProduct key={idx} currentProduct={currentProduct} />
+                <CartProduct key={idx} _id={currentProduct._id} quantity={currentProduct.quantity}/>
               ))}
               {/* <h1>Total: {cart.getTotalCost().toFixed(2)}</h1> */}
               <Button variant='success' onClick={checkout}>Checkout</Button>

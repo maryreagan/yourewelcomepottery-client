@@ -8,12 +8,11 @@ export const CartContext = createContext({
     addOneToCart: () => {},
     removeOneFromCart: () => {},
     deleteFromCart: () => {},
-    //getTotalCost: () => {}
+    getTotalCost: () => {}
 });
 
 
 export function CartProvider({children}){
-    const { products, getProductData } = ProductComponent()
     const [cartProducts, setCartProducts] = useState([])
     console.log(cartProducts);
 
@@ -77,16 +76,17 @@ export function CartProvider({children}){
         )
     }
 
-   /*  function getTotalCost() {
+    function getTotalCost() {
         let totalCost = 0;
         cartProducts.map((cartItem) => {
+            const { products, getProductData } = ProductComponent()
             const productData = getProductData(cartItem._id)
             console.log(cartItem._id)
             totalCost += (productData.price * cartItem.quantity)
         })
-        
+
         return totalCost
-    } */
+    }
 
     const contextValue = {
         items: cartProducts,
@@ -94,7 +94,7 @@ export function CartProvider({children}){
         addOneToCart,
         removeOneFromCart,
         deleteFromCart,
-        //getTotalCost
+        getTotalCost
 
     }
     return (

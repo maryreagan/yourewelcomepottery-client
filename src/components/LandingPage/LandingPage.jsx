@@ -14,7 +14,7 @@ function LandingPage() {
   const tagFilter = searchParams.get("tag")
   
   useEffect(() => {
-    console.log("displayedProducts", displayedProducts)
+    //console.log("displayedProducts", displayedProducts)
     setCurrentTabValue(tagFilter || "")
   }, [tagFilter])
 
