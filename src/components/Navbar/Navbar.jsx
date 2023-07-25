@@ -1,3 +1,4 @@
+
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Tabs, Tab } from "@mui/material";
@@ -16,6 +17,7 @@ import { Badge, Modal } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import "./Navbar.css";
 
+
 function Navbar( {cart}) {
   const [currentTabValue, setCurrentTabValue] = useState("");
 
@@ -27,6 +29,7 @@ function Navbar( {cart}) {
   return (
     <>
       <div className="checkout-container">
+
 
                 <Badge badgeContent={productsCount} className="white-badge">
                   {/* <Button startIcon={<ShoppingCartIcon sx={{ color: 'white', fontSize: 58}}/>}></Button> */}
@@ -61,6 +64,7 @@ function Navbar( {cart}) {
         </Tabs>
       </div>
     </>
+
   );
 }
 

@@ -1,3 +1,4 @@
+
 import React, {useState, useEffect} from 'react'
 import { Typography, Button } from "@mui/material";
 
@@ -43,6 +44,7 @@ const [totalPrice, setTotalPrice] = useState(0)
       ) : (
         cart.map((item) => (
           <div key={item.id}>
+
             <Typography variant="body1">{item.productName}</Typography>
             <Typography variant="body2">${item.price}</Typography>
             <Button onClick={() => removeFromCart(item)}>Remove</Button>
@@ -53,10 +55,10 @@ const [totalPrice, setTotalPrice] = useState(0)
       )}
       <Typography variant="body1">Total: ${totalPrice}</Typography>
       <Button onClick={checkout}> Checkout </Button>
+
     </div>
   );
 }
 
 export default Cart
 
-// () => removeFromCart(item._id)
