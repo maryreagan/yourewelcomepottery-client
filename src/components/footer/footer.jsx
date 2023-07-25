@@ -1,6 +1,8 @@
 import React from 'react'
 import MarkunreadIcon from '@mui/icons-material/Markunread';
+
 import "./footer.css"
+import stripes from "../../../public/stripes.png"
 function Footer() {
   let handleEmail = () => {
     let email = "jonathan.amsalem@gmail.com"
@@ -8,28 +10,40 @@ function Footer() {
     window.location.href = mailTo
   }
   return (
-    <div>
-      <h2>GET IN TOUCH</h2>
-      <h3>Phone Number : 111-111-1111</h3>
-      <h3>Location: 309 Plus Park DriveStudio 147, Nashville, TN 37217</h3>
-      <h3>Hours of Operations: By Appointment Only</h3>
-
+    <div id ="footerMain">
+      <h3>GET IN TOUCH</h3>
+  <div id="footer">
+     <div id="contactInfo">
+      <h4>Location: 309 Plus Park DriveStudio 147, Nashville, TN 37217</h4>
+      <h4>Hours of Operations: By Appointment Only</h4>
+      </div>
+      <span class="divider1" />
+      <div id= "email">
+      <button onClick={handleEmail}>
+      <MarkunreadIcon fontSize="large" />
+      </button>
       <a
         href="javascript:void(
         window.open(
           'https://form.jotform.com/232046323497153',
           'blank',
-          'scrollbars=yes,
+          'scrollbars=yes, 
           toolbar=no,
           width=700,
-          height=500'
+          height=500' 
         )
       )
     "
       >
         Get Our Newsletter!
       </a>
+      </div>
+      <span class="divider" />
+      <img src={stripes} alt="P" />
     </div>
+    </div>
+    
+    
   );
 }
 

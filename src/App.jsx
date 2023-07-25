@@ -52,7 +52,7 @@ function App() {
         <Route path="cart" element={<Cart cart={cart} removeFromCart={removeFromCart}/>} />
       </Routes>
     </BrowserRouter>
-    <Footer />
+    <Footer /> 
   </ThemeProvider>
   );
 }

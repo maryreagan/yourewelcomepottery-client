@@ -284,13 +284,14 @@ let deleteProd = async (e)=> {
     products.map((product) => {
         return(
     <Card sx={{ maxWidth: 300 }}>
-      <CardMedia
+      <CardMedia 
         component="img"
         alt={product.altText}
         height="400"
         image={product.imageUrl}
+    
       />
-      <CardContent>
+      <CardContent >
         <Typography gutterBottom variant="h7" component="div">
           {`Name: ${product.productName}`}
         </Typography>
