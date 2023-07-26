@@ -255,7 +255,7 @@ let deleteProd = async (e)=> {
     </RadioGroup>
 
 </FormControl>
-<Button id="modalBtn" variant='contained' type="submit" onClick={(e)=> update(e)}>Update </Button>
+<Button variant='contained' type="submit" onClick={(e)=> update(e)}>Update </Button>
 </form>
 </Modal>
     : updateImage?  
@@ -268,14 +268,14 @@ let deleteProd = async (e)=> {
         id="file"
         onChange={e => setSelectedFile(e.target.files[0])}
         />
-        <Button id="modalBtn"  variant='contained' type="submit" onClick={(e)=> updateImg(e)}>Update Image </Button>
+        <Button variant='contained' type="submit" onClick={(e)=> updateImg(e)}>Update Image </Button>
         </form>
         </Modal> 
         : deleteProduct ? 
         <Modal id="modal" open={isModalOpen} onClose={handleCloseModel}>
             <form id ="formContent" action="POST">
                 <h2>Are you sure you want to delete this item?</h2>
-         <Button id="modalBtn"  variant='contained' type="submit" onClick={(e)=> deleteProd(e)}>Delete Product </Button>
+         <Button variant='contained' type="submit" onClick={(e)=> deleteProd(e)}>Delete Product </Button>
          </form>
          </Modal> 
         : null}

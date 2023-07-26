@@ -14,7 +14,7 @@ padding-right: 36vw;
 padding-left: 35vw;
 
 }
-#login1, #forgot1{
+#login1 {
 gap: .5em;
 padding-right: 14vw;
 padding-left: 14vw;
@@ -55,18 +55,3 @@ justify-content: center;}
 
 
 #button{margin-left: 25vw; margin-right: 25vw}
-
-#sendEmail{
-    width: 28vw;
-    font: 1vw Arial;
-}
-
-#logout{
-    width: 15vw;
-    font: 1vw Arial;
-}
-
-#modalBtn{
-    width: 25vw;
-    align-self: center;
-}

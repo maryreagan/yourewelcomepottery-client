@@ -26,10 +26,10 @@ function Footer() {
       <span class="divider1" />
       <div id= "email">
         <div id="instagramEmail">
-      <button onClick={handleInsta}>
+      <button id="btn" onClick={handleInsta}>
       <InstagramIcon  id="icon" fontSize="large" />
       </button>
-      <button onClick={handleEmail}>
+      <button id="btn" onClick={handleEmail}>
       <MarkunreadIcon id="icon" fontSize="large" />
       </button>
       </div>
