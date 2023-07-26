@@ -1,24 +1,14 @@
-
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Tabs, Tab } from "@mui/material";
 import logo from "/logo.png";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import InputBase from "@mui/material/InputBase";
-import { styled, alpha } from "@mui/material/styles";
-import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import IconButton from "@mui/material/IconButton";
-import { Badge, Modal } from "@mui/material";
+import { Badge } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import "./Navbar.css";
 
-function Navbar( {cart }) {
-
+function Navbar({ cart }) {
   const [currentTabValue, setCurrentTabValue] = useState("");
 
   const handleTabChange = (e, newValue) => {
@@ -34,19 +24,13 @@ function Navbar( {cart }) {
   return (
     <>
       <div className="checkout-container">
-
-                <Badge badgeContent={productsCount} className="white-badge">
-
-                  <IconButton className="cart" component={Link} to="/Cart">
-                    <ShoppingCartIcon
-                      sx={{ color: theme.palette.secondary.main }}
-                    />
-                  </IconButton>
-                </Badge>
-            
+        <Badge badgeContent={productsCount} className="white-badge">
+          <IconButton className="cart" component={Link} to="/Cart">
+            <ShoppingCartIcon sx={{ color: theme.palette.secondary.main }} />
+          </IconButton>
+        </Badge>
       </div>
       <div className="container">
-
         <img src={logo} alt="<You're Welcome Pottery Logo>" className="logo" />
 
         <h1 className="title">You're Welcome Pottery</h1>
@@ -70,7 +54,6 @@ function Navbar( {cart }) {
         </Tabs>
       </div>
     </>
-
   );
 }
 
