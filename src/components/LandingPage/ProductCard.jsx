@@ -7,7 +7,6 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import IconButton from "@mui/material/IconButton";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useTheme } from "@mui/material/styles";
-import { shadows } from "@mui/system";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -35,7 +34,7 @@ function ProductCard( { product, onAddToCart } ) {
   };
 
   return (
-    <Card sx={{ maxWidth: 300, boxShadow: 3 }}>
+    <Card sx={{ maxWidth: 300 }} elevation={24}>
       <CardMedia
         component="img"
         style={{ height: 300, width: 300 }}
@@ -43,7 +42,7 @@ function ProductCard( { product, onAddToCart } ) {
         alt={product.altText}
       />
       <CardContent sx={{ backgroundColor: theme.palette.secondary.main }}>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h6" component="div">
           {product.productName}
         </Typography>
         <Typography gutterBottom variant="body2" color="text.secondary">
@@ -51,9 +50,11 @@ function ProductCard( { product, onAddToCart } ) {
         </Typography>
       </CardContent>
 
-      <CardActions disableSpacing sx={{ backgroundColor: theme.palette.secondary.main }}>
+      <CardActions disableSpacing>
         {product.quantity > 0 ? (
-          <Button onClick={handleAddToCart} startIcon={<ShoppingCartIcon />}>Add to Cart</Button>
+          <Button onClick={handleAddToCart} startIcon={<ShoppingCartIcon />}>
+            Add to Cart
+          </Button>
         ) : (
           <Typography paragraph color="primary.main">
             SOLD OUT
