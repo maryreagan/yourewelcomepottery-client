@@ -1,8 +1,12 @@
 
 import React, {useState, useEffect} from 'react'
-import { Typography, Button } from "@mui/material";
+import { Typography, ButtonGroup, Button } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
+import Box from "@mui/material/Box";
 
-function Cart( { cart, removeFromCart } ) {
+function Cart( { cart, removeFromCart, quantityDecrement, handleAddToCart } ) {
+
 
 const [totalPrice, setTotalPrice] = useState(0)
   
@@ -14,9 +18,6 @@ const [totalPrice, setTotalPrice] = useState(0)
     });
     setTotalPrice(totalPrice);
   }, [cart]);
-
-    
-
 
   const checkout = async () => {
     await fetch("http://localhost:8080/checkout", {
@@ -44,11 +45,44 @@ const [totalPrice, setTotalPrice] = useState(0)
       ) : (
         cart.map((item) => (
           <div key={item.id}>
+            <Typography variant="body1">{item.productName}</Typography>
+            <Typography variant="body2">${item.price}</Typography>
+            <Button onClick={() => removeFromCart(item)}>Remove</Button>
+            <Box
+              sx={{
+                color: "action.active",
+                display: "flex",
+                flexDirection: "column",
+                "& > *": {
+                  marginBottom: 2,
+                },
+                "& .MuiBadge-root": {
+                  marginRight: 4,
+                },
+              }}
+            >
+              <div>
+                <ButtonGroup>
+                  <Button
+                    aria-label="reduce"
+                    onClick={() => quantityDecrement(item._id)}
+                  >
+                    <RemoveIcon fontSize="small" />
+                  </Button>
+                  <Typography variant="body1">{item.quantity}</Typography>
+                  <Button
+                    aria-label="increase"
+                    onClick={() => handleAddToCart(item)}
+                  >
+                    <AddIcon fontSize="small" />
+                  </Button>
+                </ButtonGroup>
+              </div>
+            </Box>
 
             <Typography variant="body1">{item.productName}</Typography>
             <Typography variant="body2">${item.price}</Typography>
             <Button onClick={() => removeFromCart(item)}>Remove</Button>
-            
             
           </div>
         ))
@@ -61,4 +95,5 @@ const [totalPrice, setTotalPrice] = useState(0)
 }
 
 export default Cart
+
 
