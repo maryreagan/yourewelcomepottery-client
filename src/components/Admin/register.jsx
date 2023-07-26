@@ -51,7 +51,7 @@ catch(err){
             onChange={e => setPassword(e.target.value)}
             placeholder='Password'
         />
-    <Button variant='contained' type="submit" onClick={registerUser}>Register</Button>
+    <Button id ="sendEmail" variant='contained' type="submit" onClick={registerUser}>Register</Button>
 
         </form>
          </>

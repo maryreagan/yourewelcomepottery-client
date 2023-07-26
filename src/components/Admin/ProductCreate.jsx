@@ -144,7 +144,7 @@ let handleTagChange = (e) => {
         </RadioGroup>
 
     </FormControl>
-<Button variant='contained' type="submit" onClick={upload}>Submit</Button>
+<Button id="sendEmail" variant='contained' type="submit" onClick={upload}>Submit</Button>
 
         </form>
     </>
