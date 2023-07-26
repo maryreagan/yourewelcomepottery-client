@@ -1,15 +1,17 @@
 
 import React, {useState, useEffect} from 'react'
 import { Typography, ButtonGroup, Button } from "@mui/material";
+import { Card, CardMedia } from "@mui/material";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import Box from "@mui/material/Box";
+
+import "./Cart.css"
 
 function Cart( { cart, removeFromCart, quantityDecrement, handleAddToCart } ) {
+  const [totalPrice, setTotalPrice] = useState(0);
 
-
-const [totalPrice, setTotalPrice] = useState(0)
-  
   useEffect(() => {
     // Calculate the total price whenever the cart changes
     let totalPrice = 0;
@@ -38,30 +40,36 @@ const [totalPrice, setTotalPrice] = useState(0)
   };
 
   return (
-    <div>
-      <Typography variant="h4">Shopping Cart</Typography>
+    <div className="container">
+      <h1 className="title">Shopping Cart</h1>
       {cart.length === 0 ? (
-        <Typography variant="body1">Your cart is empty.</Typography>
+        <Typography variant="h3">Your cart is empty. Start shopping!</Typography>
       ) : (
-        cart.map((item) => (
-          <div key={item.id}>
-            <Typography variant="body1">{item.productName}</Typography>
-            <Typography variant="body2">${item.price}</Typography>
-            <Button onClick={() => removeFromCart(item)}>Remove</Button>
-            <Box
-              sx={{
-                color: "action.active",
-                display: "flex",
-                flexDirection: "column",
-                "& > *": {
-                  marginBottom: 2,
-                },
-                "& .MuiBadge-root": {
-                  marginRight: 4,
-                },
-              }}
-            >
-              <div>
+        <div className="cart-container">
+          {cart.map((item) => (
+            <Card sx={{ minWidth: 275, maxWidth: 100 }} elevation={24}>
+              <CardContent>
+                <CardMedia
+                  component="img"
+                  height="140"
+                  image={item.imageUrl}
+                  alt={item.altText}
+                />
+                <Typography variant="h5" component="div">
+                  {item.productName}
+                </Typography>
+                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                  ${item.price}
+                </Typography>
+                <Typography
+                  sx={{ fontSize: 14 }}
+                  color="text.secondary"
+                  gutterBottom
+                >
+                  Quantity in Cart: {item.quantity}
+                </Typography>
+              </CardContent>
+              <CardActions>
                 <ButtonGroup>
                   <Button
                     aria-label="reduce"
@@ -69,7 +77,7 @@ const [totalPrice, setTotalPrice] = useState(0)
                   >
                     <RemoveIcon fontSize="small" />
                   </Button>
-                  <Typography variant="body1">{item.quantity}</Typography>
+
                   <Button
                     aria-label="increase"
                     onClick={() => handleAddToCart(item)}
@@ -77,19 +85,22 @@ const [totalPrice, setTotalPrice] = useState(0)
                     <AddIcon fontSize="small" />
                   </Button>
                 </ButtonGroup>
-              </div>
-            </Box>
-
-            <Typography variant="body1">{item.productName}</Typography>
-            <Typography variant="body2">${item.price}</Typography>
-            <Button onClick={() => removeFromCart(item)}>Remove</Button>
-            
-          </div>
-        ))
+                <Button onClick={() => removeFromCart(item)}>
+                  Remove from cart
+                </Button>
+              </CardActions>
+            </Card>
+          ))}
+        </div>
       )}
-      <Typography variant="body1">Total: ${totalPrice}</Typography>
-      <Button onClick={checkout}> Checkout </Button>
-
+      <Typography variant="h5">Total: ${totalPrice}</Typography>
+      <Button size="large" variant="contained" onClick={checkout}>
+        Checkout
+      </Button>
+      <Typography variant="h6">
+        Click checkout for taxes and shipping
+      </Typography>
+        
     </div>
   );
 }

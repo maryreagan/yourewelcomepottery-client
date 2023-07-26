@@ -7,7 +7,6 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import IconButton from "@mui/material/IconButton";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useTheme } from "@mui/material/styles";
-import { shadows } from "@mui/system";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -35,7 +34,7 @@ function ProductCard( { product, onAddToCart } ) {
   };
 
   return (
-    <Card sx={{ maxWidth: 300, boxShadow: 3 }}>
+    <Card sx={{ maxWidth: 300 }} elevation={24}>
       <CardMedia
         component="img"
         height="400"

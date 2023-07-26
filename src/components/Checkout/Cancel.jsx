@@ -13,12 +13,9 @@ function Cancel() {
         fontFamily: "Courier New, monospace",
       }}
     >
-      <Button variant="contained" href="http://localhost:5173/">
-        HOME
-      </Button>
 
-      <h1 style={{ fontFamily: "Courier New, monospace" }}>
-        😢 payment successfully canceled
+      <h1 style={{ fontFamily: "Arial" }}>
+        😢 transaction canceled
       </h1>
     </div>
   );
