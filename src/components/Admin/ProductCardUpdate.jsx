@@ -304,84 +304,54 @@ let deleteProd = async (e)=> {
         </Modal>
       ) : deleteProduct ? (
         <Modal id="modal" open={isModalOpen} onClose={handleCloseModel}>
-          <form id="formContent" action="POST">
-            <h2>Are you sure you want to delete this item?</h2>
-            <Button
-              variant="contained"
-              type="submit"
-              onClick={(e) => deleteProd(e)}
-            >
-              Delete Product{" "}
-            </Button>
-          </form>
-        </Modal>
-      ) : null}
-      <div id="cards">
-        {products.length === 0}
-        ? <h1>Add some prodcuts</h1>
-        :
-        {products.map((product) => {
-          return (
-            <Card sx={{ maxWidth: 300 }}>
-              <CardMedia
-                component="img"
-                alt={product.altText}
-                style={{ height: 300, width: 300 }}
-                image={product.imageUrl}
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h7" component="div">
-                  {`Name: ${product.productName}`}
-                </Typography>
-                <Typography gutterBottom variant="h7" component="div">
-                  {`Price: $${product.price}`}
-                </Typography>
-                <Typography gutterBottom variant="h7" component="div">
-                  {`Quantity: ${product.quantity}`}
-                </Typography>
-                <Typography gutterBottom variant="h7" component="div">
-                  {`altText: ${product.altText}`}
-                </Typography>
-                <Typography gutterBottom variant="h7" component="div">
-                  {`Tag: ${product.tag}`}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {product.description}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button
-                  size="small"
-                  onClick={() => {
-                    handleUpdateContent(product._id);
-                    handleOpenModel();
-                  }}
-                >
-                  Update Content
-                </Button>
-                <Button
-                  size="small"
-                  onClick={() => {
-                    handleUpdateImage(product._id);
-                    handleOpenModel();
-                  }}
-                >
-                  Update Image
-                </Button>
-                <Button
-                  size="small"
-                  onClick={() => {
-                    handleDeleteProduct(product._id);
-                    handleOpenModel();
-                  }}
-                >
-                  Delete
-                </Button>
-              </CardActions>
-            </Card>
-          );
-        })}
-      </div>
+            <form id ="formContent" action="POST">
+                <h2>Are you sure you want to delete this item?</h2>
+         <Button variant='contained' type="submit" onClick={(e)=> deleteProd(e)}>Delete Product </Button>
+         </form>
+         </Modal> )
+        : null}
+    <div id="cards">
+
+    {products.length == 0 ?(
+    products.map((product) => {
+        return(
+    <Card sx={{ maxWidth: 300 }}>
+      <CardMedia 
+        component="img"
+        alt={product.altText}
+        style={{ height: 300, width: 300 }}
+        image={product.imageUrl}
+    
+      />
+      <CardContent >
+        <Typography gutterBottom variant="h7" component="div">
+          {`Name: ${product.productName}`}
+        </Typography>
+        <Typography gutterBottom variant="h7" component="div">
+          {`Price: $${product.price}`}
+        </Typography>
+        <Typography gutterBottom variant="h7" component="div">
+          {`Quantity: ${product.quantity}`}
+        </Typography>
+        <Typography gutterBottom variant="h7" component="div">
+          {`altText: ${product.altText}`}
+        </Typography>
+        <Typography gutterBottom variant="h7" component="div">
+          {`Tag: ${product.tag}`}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {product.description}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small" onClick={()=>{handleUpdateContent(product._id); handleOpenModel()}}>Update Content</Button>
+        <Button size="small" onClick={() => {handleUpdateImage(product._id); handleOpenModel()}}>Update Image</Button>
+        <Button  size="small" onClick={() =>{handleDeleteProduct(product._id); handleOpenModel()}}>Delete</Button>
+      </CardActions>
+    </Card>)
+    
+    })) : <h1>No products</h1> }
+    </div>
     </>
   );
 
