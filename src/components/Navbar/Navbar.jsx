@@ -16,20 +16,22 @@ import { Badge, Modal } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import "./Navbar.css";
 
-function Navbar( {cart}) {
+function Navbar( {cart }) {
   const [currentTabValue, setCurrentTabValue] = useState("");
 
   const handleTabChange = (e, newValue) => {
     setCurrentTabValue(newValue);
   };
   const theme = useTheme();
-  const productsCount = (cart.length)
+  const productsCount = cart.reduce(
+    (sum, product) => sum + product.quantity,
+    0
+  );
   return (
     <>
       <div className="checkout-container">
 
                 <Badge badgeContent={productsCount} className="white-badge">
-                  {/* <Button startIcon={<ShoppingCartIcon sx={{ color: 'white', fontSize: 58}}/>}></Button> */}
                   <IconButton className="cart" component={Link} to="/Cart">
                     <ShoppingCartIcon
                       sx={{ color: theme.palette.secondary.main }}
@@ -39,7 +41,7 @@ function Navbar( {cart}) {
             
       </div>
       <div className="container">
-        <img src={logo} alt="<You're Welcome Potteyr Logo>" className="logo" />
+        <img src={logo} alt="<You're Welcome Pottery Logo>" className="logo" />
         <h1 className="title">You're Welcome Pottery</h1>
         <Tabs
           className="tabs"
