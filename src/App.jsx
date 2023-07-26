@@ -84,7 +84,6 @@ const handleAddToCart = (product) => {
 
   return (
     <ThemeProvider theme={theme}>
-
       <BrowserRouter>
         <Navbar cart={cart} />
         <Routes>
