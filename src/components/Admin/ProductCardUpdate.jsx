@@ -280,7 +280,8 @@ let deleteProd = async (e)=> {
          </Modal> 
         : null}
     <div id="cards">
-    {
+
+    {products.length == 0 ?(
     products.map((product) => {
         return(
     <Card sx={{ maxWidth: 300 }}>
@@ -318,7 +319,7 @@ let deleteProd = async (e)=> {
       </CardActions>
     </Card>)
     
-    })}
+    })) : <h1>No products</h1> }
     </div>
     </>
     )
