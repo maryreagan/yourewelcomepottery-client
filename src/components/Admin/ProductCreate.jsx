@@ -137,10 +137,10 @@ let handleTagChange = (e) => {
          <FormLabel id="Tag">Tag</FormLabel>
 
          <RadioGroup >
-        <FormControlLabel value="Fall" onChange={handleTagChange} control={<Radio />} label="Fall" />
-        <FormControlLabel value="Winter" onChange={handleTagChange} control={<Radio />} label="Winter" />
-        <FormControlLabel value="Spring" onChange={handleTagChange} control={<Radio />} label="Spring" />
-        <FormControlLabel value="Summer" onChange={handleTagChange} control={<Radio />} label="Summer" />
+        <FormControlLabel value="Sedona" onChange={handleTagChange} control={<Radio />} label="Sedona" />
+        <FormControlLabel value="BW" onChange={handleTagChange} control={<Radio />} label="Black and White" />
+        <FormControlLabel value="FunGuys" onChange={handleTagChange} control={<Radio />} label="Fun Guys" />
+        <FormControlLabel value="Jo" onChange={handleTagChange} control={<Radio />} label="Jo" />
         </RadioGroup>
 
     </FormControl>

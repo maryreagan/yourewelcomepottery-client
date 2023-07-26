@@ -45,23 +45,28 @@ function LandingPage({ products, handleAddToCart }) {
           >
             <Tab label="All Items" value="" component={Link} to="." />
             <Tab
-              label="Spring"
-              value="spring"
+              label="Sedona"
+              value="sedona"
               component={Link}
-              to="?tag=spring"
+              to="?tag=sedona"
             />
             <Tab
-              label="Summer"
-              value="summer"
+              label="Black and White"
+              value="bw"
               component={Link}
-              to="?tag=summer"
+              to="?tag=bw"
             />
-            <Tab label="Fall" value="fall" component={Link} to="?tag=fall" />
             <Tab
-              label="Winter"
-              value="winter"
+            label="Fun Guys"
+            value="funguys"
+            component={Link} 
+            to="?tag=funguys" 
+            />
+            <Tab
+              label="Jo"
+              value="jo"
               component={Link}
-              to="?tag=winter"
+              to="?tag=jo"
             />
           </Tabs>
         </nav>

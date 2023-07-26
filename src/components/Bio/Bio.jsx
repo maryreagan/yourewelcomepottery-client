@@ -2,6 +2,7 @@ import React from 'react'
 import headshot from "/headshot.jpg"
 import "./Bio.css"
 
+
 function Bio() {
   return (
     <div className="bio-container">
