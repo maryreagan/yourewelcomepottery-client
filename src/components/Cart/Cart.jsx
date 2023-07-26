@@ -6,11 +6,12 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-
+import { useTheme } from "@mui/material/styles";
 import "./Cart.css"
 
 function Cart( { cart, removeFromCart, quantityDecrement, handleAddToCart } ) {
   const [totalPrice, setTotalPrice] = useState(0);
+  const theme = useTheme();
 
   useEffect(() => {
     // Calculate the total price whenever the cart changes
@@ -43,12 +44,16 @@ function Cart( { cart, removeFromCart, quantityDecrement, handleAddToCart } ) {
     <div className="container">
       <h1 className="title">Shopping Cart</h1>
       {cart.length === 0 ? (
-        <Typography variant="h3">Your cart is empty. Start shopping!</Typography>
+        <Typography variant="h3">
+          Your cart is empty. Start shopping!
+        </Typography>
       ) : (
         <div className="cart-container">
           {cart.map((item) => (
             <Card sx={{ minWidth: 275, maxWidth: 100 }} elevation={24}>
-              <CardContent>
+              <CardContent
+                sx={{ backgroundColor: theme.palette.secondary.main }}
+              >
                 <CardMedia
                   component="img"
                   height="140"
@@ -100,7 +105,6 @@ function Cart( { cart, removeFromCart, quantityDecrement, handleAddToCart } ) {
       <Typography variant="h6">
         Click checkout for taxes and shipping
       </Typography>
-        
     </div>
   );
 }
