@@ -5,9 +5,8 @@ import ProductCard from './ProductCard'
 import { Tabs, Tab } from "@mui/material";
 
 
-
-
 function LandingPage({ products, handleAddToCart }) {
+
   
   const [ currentTabValue, setCurrentTabValue ] = useState("")
   const [ searchParams, setSearchParams ] = useSearchParams()
@@ -77,6 +76,7 @@ function LandingPage({ products, handleAddToCart }) {
         <div className="product-cards-container">
           {displayedProducts.map((product) => {
             return <ProductCard key={product._id} product={product} onAddToCart={() => handleAddToCart(product)}/>;
+
           })}
         </div>
       </>

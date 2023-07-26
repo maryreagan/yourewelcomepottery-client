@@ -1,3 +1,4 @@
+
 import React, {useState, useEffect} from 'react'
 import { Typography, ButtonGroup, Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
@@ -5,6 +6,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import Box from "@mui/material/Box";
 
 function Cart( { cart, removeFromCart, quantityDecrement, handleAddToCart } ) {
+
 
 const [totalPrice, setTotalPrice] = useState(0)
   
@@ -16,7 +18,6 @@ const [totalPrice, setTotalPrice] = useState(0)
     });
     setTotalPrice(totalPrice);
   }, [cart]);
-
 
   const checkout = async () => {
     await fetch("http://localhost:8080/checkout", {
@@ -78,17 +79,21 @@ const [totalPrice, setTotalPrice] = useState(0)
                 </ButtonGroup>
               </div>
             </Box>
+
+            <Typography variant="body1">{item.productName}</Typography>
+            <Typography variant="body2">${item.price}</Typography>
+            <Button onClick={() => removeFromCart(item)}>Remove</Button>
+            
           </div>
         ))
       )}
       <Typography variant="body1">Total: ${totalPrice}</Typography>
       <Button onClick={checkout}> Checkout </Button>
+
     </div>
   );
 }
 
 export default Cart
 
-// () => removeFromCart(item._id)
 
- 

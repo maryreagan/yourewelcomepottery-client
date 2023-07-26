@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import "./App.css";
 import Admin from "./components/Admin/Admin";
@@ -12,6 +13,7 @@ import Success from "./components/Checkout/Success";
 import Cancel from "./components/Checkout/Cancel";
 
 const theme = createTheme({
+
   palette: {
     primary: {
       main: "#a04d31",
@@ -23,6 +25,7 @@ const theme = createTheme({
 });
 
 function App() {
+
   const [cart, setCart] = useState([]);
   const [products, setProducts] = useState([]);
 
@@ -85,8 +88,28 @@ const handleAddToCart = (product) => {
     console.log("Current Cart:", cart);
   }, [cart]);
 
+   const [cart, setCart] = useState([]);
+
+   const handleAddToCart = (product) => {
+     setCart((prevCart) => [...prevCart, product]);
+   };
+
+   const removeFromCart = (product) => {
+
+     setCart((prevCart) => prevCart.filter((item) => item._id!== product._id));
+   }
+
+     useEffect(() => {
+       console.log("Current Cart:", cart);
+     }, [cart]);
+
+
+    return (
+
+
   return (
     <ThemeProvider theme={theme}>
+
       <BrowserRouter>
         <Navbar cart={cart} />
         <Routes>
@@ -113,6 +136,7 @@ const handleAddToCart = (product) => {
       </BrowserRouter>
       <Footer />
     </ThemeProvider>
+
   );
 }
 

@@ -1,6 +1,12 @@
 import React from 'react'
+import MarkunreadIcon from '@mui/icons-material/Markunread';
 import "./footer.css"
 function Footer() {
+  let handleEmail = () => {
+    let email = "jonathan.amsalem@gmail.com"
+    let mailTo = `mailto:${email}`
+    window.location.href = mailTo
+  }
   return (
     <div>
       <h2>GET IN TOUCH</h2>
