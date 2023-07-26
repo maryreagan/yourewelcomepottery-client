@@ -1,10 +1,15 @@
 import React from 'react'
 import MarkunreadIcon from '@mui/icons-material/Markunread';
 import Link from '@mui/material/Link';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 import "./footer.css"
 import stripes from "../../../public/stripes.png"
 function Footer() {
+  let handleInsta = () =>{
+    window.location.href = "https://www.instagram.com/yourewelcomepottery/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"
+  }
+  
   let handleEmail = () => {
     let email = "jonathan.amsalem@gmail.com"
     let mailTo = `mailto:${email}`
@@ -20,9 +25,14 @@ function Footer() {
       </div>
       <span class="divider1" />
       <div id= "email">
-      <button onClick={handleEmail}>
-      <MarkunreadIcon fontSize="large" />
+        <div id="instagramEmail">
+      <button onClick={handleInsta}>
+      <InstagramIcon  id="icon" fontSize="large" />
       </button>
+      <button onClick={handleEmail}>
+      <MarkunreadIcon id="icon" fontSize="large" />
+      </button>
+      </div>
       <Link id="newsletter"
         href="javascript:void(
         window.open(
