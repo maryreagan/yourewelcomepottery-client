@@ -1,5 +1,6 @@
 import React from 'react'
 import MarkunreadIcon from '@mui/icons-material/Markunread';
+import Link from '@mui/material/Link';
 
 import "./footer.css"
 import stripes from "../../../public/stripes.png"
@@ -22,7 +23,7 @@ function Footer() {
       <button onClick={handleEmail}>
       <MarkunreadIcon fontSize="large" />
       </button>
-      <a
+      <Link id="newsletter"
         href="javascript:void(
         window.open(
           'https://form.jotform.com/232046323497153',
@@ -34,9 +35,12 @@ function Footer() {
         )
       )
     "
+    color = "inherit"
       >
+        
         Get Our Newsletter!
-      </a>
+        </Link>
+
       </div>
       <span class="divider" />
       <img src={stripes} alt="P" />

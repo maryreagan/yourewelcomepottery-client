@@ -287,7 +287,7 @@ let deleteProd = async (e)=> {
       <CardMedia 
         component="img"
         alt={product.altText}
-        height="400"
+        style={{ height: 300, width: 300 }}
         image={product.imageUrl}
     
       />

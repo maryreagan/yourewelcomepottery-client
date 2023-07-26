@@ -38,7 +38,7 @@ function ProductCard( { product, onAddToCart } ) {
     <Card sx={{ maxWidth: 300, boxShadow: 3 }}>
       <CardMedia
         component="img"
-        height="400"
+        style={{ height: 300, width: 300 }}
         image={product.imageUrl}
         alt={product.altText}
       />
