@@ -60,15 +60,7 @@ const handleAddToCart = (product) => {
   }
 };
 
-  const quantityIncrement = (productId, availableQuantity) => {
-    setCart((prevCart) =>
-      prevCart.map((item) =>
-        item._id === productId && item.quantity < availableQuantity
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      )
-    );
-  };
+
 
   const quantityDecrement = (productId) => {
     setCart((prevCart) =>
@@ -88,24 +80,7 @@ const handleAddToCart = (product) => {
     console.log("Current Cart:", cart);
   }, [cart]);
 
-   const [cart, setCart] = useState([]);
-
-   const handleAddToCart = (product) => {
-     setCart((prevCart) => [...prevCart, product]);
-   };
-
-   const removeFromCart = (product) => {
-
-     setCart((prevCart) => prevCart.filter((item) => item._id!== product._id));
-   }
-
-     useEffect(() => {
-       console.log("Current Cart:", cart);
-     }, [cart]);
-
-
-    return (
-
+   
 
   return (
     <ThemeProvider theme={theme}>
