@@ -4,6 +4,7 @@ import studio from "/studio.jpg"
 import "./Bio.css"
 import { useState } from "react";
 import { TextField, Button, Typography, Box } from "@mui/material";
+import axios from "axios";
 
 
 
@@ -16,6 +17,23 @@ function Bio() {
     e.preventDefault();
     //
   };
+
+  let contactUs = async () => {
+    try{
+    let response = await axios.post(`http://127.0.0.1:4000/form/contactUs`,
+    {name, email, message},
+    {headers:{
+      'Content-Type':'application/json'
+    }}
+  )
+  
+  }
+    
+    catch(error){
+      console.log(error);
+    }
+  }
+  
   return (
     <>
     <div className="bio-container">
@@ -93,7 +111,7 @@ sx ={{
             multiline
             rows={4}
           />
-          <Button variant="contained" type="submit" onClick={() => console.log("HELLO")} sx={{ mt: 2 }}>
+          <Button variant="contained" type="submit" onClick={()=> {contactUs(), console.log(name,email,message)}} sx={{ mt: 2 }}>
             Submit
           </Button>
         </form>
