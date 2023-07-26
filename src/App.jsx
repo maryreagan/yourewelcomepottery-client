@@ -35,7 +35,10 @@ function App() {
       fetch("http://127.0.0.1:4000/products/all")
         .then((res) => res.json())
         // .then(console.log("hererere", res))
-        .then((data) => setProducts(data));
+        .then((data) => {
+          console.log("data", data);
+          if(!data) setFlag(false);
+          setProducts(data)} );
     }, []);
 
 
@@ -91,10 +94,10 @@ const handleAddToCart = (product) => {
         <Routes>
           <Route
             path="/"
-            element={flag ? (<LandingPage products={products} handleAddToCart={handleAddToCart} />) : (<Navigate replace to={"bio"} />)}
+            element={flag ? (<LandingPage products={products} handleAddToCart={handleAddToCart} />) : (<Navigate replace to={"*"} />)}
           />
           <Route path="admin" element={<Admin />} />
-          <Route path="bio" element={<Bio />} />
+          <Route path="about" element={<Bio />} />
           <Route
             path="cart"
             element={

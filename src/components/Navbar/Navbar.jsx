@@ -48,7 +48,7 @@ function Navbar({ cart }) {
           <Tab label="Home" component={Link} to="/">
             Home
           </Tab>
-          <Tab label="About" component={Link} to="/bio">
+          <Tab label="About" component={Link} to="/about">
             About
           </Tab>
         </Tabs>
