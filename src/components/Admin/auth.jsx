@@ -89,7 +89,7 @@ function Auth({updateLocalStorage, email, setEmail}) {
       
           let data = await response.json();
           console.log(data)
-          window.alert("Password reset")
+
           // Toggle the update trigger to refresh the messages
       
         } catch (err) {
@@ -148,7 +148,7 @@ function Auth({updateLocalStorage, email, setEmail}) {
         onChange={e => setPassword(e.target.value)}
         placeholder="Password"
     />
-    <Button variant = "contained" type="submit" onClick = {(e) => {updateUser(e); setResetPassword(false)}}>Update Password</Button>
+    <Button  variant = "contained" type="submit" onClick = {(e) => {updateUser(e); setResetPassword(false)}}>Update Password</Button>
     </div>
     :<div id="login">
         <h2>Admin Login</h2>
@@ -174,8 +174,8 @@ function Auth({updateLocalStorage, email, setEmail}) {
             onChange={e => setPassword(e.target.value)}
             placeholder="Product Name"
         />
-        <Button variant='contained' type="submit" onClick={submitLogin}>Login </Button>
-        <Button variant='contained' type='submit' onClick={() => setForgotPassword(true)}>Forgot Password</Button>
+        <Button  variant='contained' type="submit" onClick={submitLogin}>Login </Button>
+        <Button  variant='contained' type='submit' onClick={() => setForgotPassword(true)}>Forgot Password</Button>
 
     </div>
     }

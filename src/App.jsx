@@ -60,7 +60,7 @@ const handleAddToCart = (product) => {
   }
 };
 
-  
+
 
   const quantityDecrement = (productId) => {
     setCart((prevCart) =>
@@ -81,9 +81,9 @@ const handleAddToCart = (product) => {
   }, [cart]);
 
    
+
   return (
     <ThemeProvider theme={theme}>
-
       <BrowserRouter>
         <Navbar cart={cart} />
         <Routes>

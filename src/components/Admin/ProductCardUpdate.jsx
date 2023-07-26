@@ -268,14 +268,14 @@ let deleteProd = async (e)=> {
         id="file"
         onChange={e => setSelectedFile(e.target.files[0])}
         />
-        <Button  variant='contained' type="submit" onClick={(e)=> updateImg(e)}>Update Image </Button>
+        <Button variant='contained' type="submit" onClick={(e)=> updateImg(e)}>Update Image </Button>
         </form>
         </Modal> 
         : deleteProduct ? 
         <Modal id="modal" open={isModalOpen} onClose={handleCloseModel}>
             <form id ="formContent" action="POST">
                 <h2>Are you sure you want to delete this item?</h2>
-         <Button id="button"  variant='contained' type="submit" onClick={(e)=> deleteProd(e)}>Delete Product </Button>
+         <Button variant='contained' type="submit" onClick={(e)=> deleteProd(e)}>Delete Product </Button>
          </form>
          </Modal> 
         : null}
@@ -284,13 +284,14 @@ let deleteProd = async (e)=> {
     products.map((product) => {
         return(
     <Card sx={{ maxWidth: 300 }}>
-      <CardMedia
+      <CardMedia 
         component="img"
         alt={product.altText}
-        height="400"
+        style={{ height: 300, width: 300 }}
         image={product.imageUrl}
+    
       />
-      <CardContent>
+      <CardContent >
         <Typography gutterBottom variant="h7" component="div">
           {`Name: ${product.productName}`}
         </Typography>
