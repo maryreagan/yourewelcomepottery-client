@@ -6,7 +6,7 @@ import LandingPage from "./components/LandingPage/LandingPage";
 import Bio from "./components/Bio/Bio";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/footer/footer";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material";
 import Cart from "./components/Cart/Cart";
 import Success from "./components/Checkout/Success";
@@ -28,6 +28,7 @@ function App() {
 
   const [cart, setCart] = useState([]);
   const [products, setProducts] = useState([]);
+  const [flag, setFlag] = useState(true);
 
     useEffect(() => {
       fetch("http://127.0.0.1:4000/products/all")
@@ -89,7 +90,7 @@ const handleAddToCart = (product) => {
         <Routes>
           <Route
             path="/"
-            element={<LandingPage products={products} handleAddToCart={handleAddToCart} />}
+            element={flag ? (<LandingPage products={products} handleAddToCart={handleAddToCart} />) : (<Navigate replace to={"bio"} />)}
           />
           <Route path="admin" element={<Admin />} />
           <Route path="bio" element={<Bio />} />

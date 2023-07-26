@@ -42,7 +42,7 @@ function ProductCard( { product, onAddToCart } ) {
         alt={product.altText}
       />
       <CardContent sx={{ backgroundColor: theme.palette.secondary.main }}>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h6" component="div">
           {product.productName}
         </Typography>
         <Typography gutterBottom variant="body2" color="text.secondary">
@@ -50,9 +50,11 @@ function ProductCard( { product, onAddToCart } ) {
         </Typography>
       </CardContent>
 
-      <CardActions disableSpacing sx={{ backgroundColor: theme.palette.secondary.main }}>
+      <CardActions disableSpacing>
         {product.quantity > 0 ? (
-          <Button onClick={handleAddToCart} startIcon={<ShoppingCartIcon />}>Add to Cart</Button>
+          <Button onClick={handleAddToCart} startIcon={<ShoppingCartIcon />}>
+            Add to Cart
+          </Button>
         ) : (
           <Typography paragraph color="primary.main">
             SOLD OUT

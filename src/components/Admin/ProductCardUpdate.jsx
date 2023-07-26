@@ -312,7 +312,7 @@ let deleteProd = async (e)=> {
         : null}
     <div id="cards">
 
-    {products.length == 0 ?(
+    {products.length > 0 ?(
     products.map((product) => {
         return(
     <Card sx={{ maxWidth: 300 }}>
