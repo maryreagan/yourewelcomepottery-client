@@ -5,23 +5,14 @@ import ProductCard from './ProductCard'
 import { Tabs, Tab } from "@mui/material";
 
 
+function LandingPage({ products, handleAddToCart }) {
 
-
-function LandingPage({ handleAddToCart }) {
   
-  const [products, setProducts] = useState([])
   const [ currentTabValue, setCurrentTabValue ] = useState("")
   const [ searchParams, setSearchParams ] = useSearchParams()
 
   const tagFilter = searchParams.get("tag")
   console.log(tagFilter)
-
-  useEffect(() => {
-    fetch("http://127.0.0.1:4000/products/all")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-    
-  }, [])
 
   useEffect(() => {
     console.log("displayedProducts", displayedProducts)
@@ -84,7 +75,8 @@ function LandingPage({ handleAddToCart }) {
         {/* Maps through displayedProducts and returns a grid with items in ProductCard component */}
         <div className="product-cards-container">
           {displayedProducts.map((product) => {
-            return <ProductCard key={product._id} product={product} onAddToCart={handleAddToCart}/>;
+            return <ProductCard key={product._id} product={product} onAddToCart={() => handleAddToCart(product)}/>;
+
           })}
         </div>
       </>
