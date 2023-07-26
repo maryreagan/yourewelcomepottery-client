@@ -11,6 +11,7 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import Cart from "./components/Cart/Cart";
 import Success from "./components/Checkout/Success";
 import Cancel from "./components/Checkout/Cancel";
+import NotFound from "./components/NotFound"
 
 const theme = createTheme({
 
@@ -107,6 +108,7 @@ const handleAddToCart = (product) => {
           />
           <Route path="success" element={<Success />} />
           <Route path="cancel" element={<Cancel />} />
+          <Route path ="*" element={<NotFound />}/>
         </Routes>
       </BrowserRouter>
       <Footer />
