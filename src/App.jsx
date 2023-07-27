@@ -15,6 +15,7 @@ import NotFound from "./components/NotFound"
 
 const theme = createTheme({
 
+
   palette: {
     primary: {
       main: "#a04d31",
@@ -26,6 +27,7 @@ const theme = createTheme({
 });
 
 function App() {
+
 
   const [cart, setCart] = useState([]);
   const [products, setProducts] = useState([]);
@@ -62,6 +64,7 @@ const handleAddToCart = (product) => {
     setCart((prevCart) => [...prevCart, { ...product, quantity: 1 }]);
   }
 };
+
 
 
 
