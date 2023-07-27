@@ -9,7 +9,7 @@ import { useTheme } from "@mui/material/styles";
 import "./Navbar.css";
 
 function Navbar({ cart }) {
-  const [currentTabValue, setCurrentTabValue] = useState("");
+  const [currentTabValue, setCurrentTabValue] = useState(0);
 
   const handleTabChange = (e, newValue) => {
     setCurrentTabValue(newValue);

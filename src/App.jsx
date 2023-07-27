@@ -34,9 +34,7 @@ function App() {
     useEffect(() => {
       fetch("http://127.0.0.1:4000/products/all")
         .then((res) => res.json())
-        // .then(console.log("hererere", res))
         .then((data) => {
-          console.log("data", data);
           if(!data) setFlag(false);
           setProducts(data)} );
     }, []);
@@ -80,12 +78,6 @@ const handleAddToCart = (product) => {
   const removeFromCart = (product) => {
     setCart((prevCart) => prevCart.filter((item) => item._id !== product._id));
   };
-
-  useEffect(() => {
-    console.log("Current Cart:", cart);
-  }, [cart]);
-
-   
 
   return (
     <ThemeProvider theme={theme}>
