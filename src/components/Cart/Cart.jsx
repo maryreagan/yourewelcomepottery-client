@@ -15,16 +15,16 @@ const [totalPrice, setTotalPrice] = useState(0)
     setTotalPrice(totalPrice);
   }, [cart]);
 
-    
+  console.log(cart);
 
 
   const checkout = async () => {
-    await fetch("http://localhost:8080/checkout", {
+    await fetch("http://localhost:4000/products/checkout", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({ items: cart.items }),
+      body: JSON.stringify({ items: cart }),
     })
       .then((res) => {
         return res.json();
