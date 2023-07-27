@@ -10,12 +10,9 @@ function Success() {
         alignItems: "center",
         justifyContent: "center",
         height: "100vh",
-        fontFamily: "Courier New, monospace",
+        fontFamily: "Arial",
       }}
     >
-      <Button variant="contained" href="http://localhost:5173/">
-        HOME
-      </Button>
 
       <h1>Thank you for your purchase 🎉</h1>
     </div>

@@ -180,117 +180,150 @@ let deleteProd = async (e)=> {
 
   return (
     <>
-    <h2>Update Content</h2>
-    {updateContent?
-    <Modal id ="modal" open={isModalOpen} onClose={handleCloseModel}>
-    <form action="POST" id ="formContent">
-        <h2>Update Product Content </h2>
-        <p>*Leave any unchanged fields empty*</p>
+      <h2>Update Content</h2>
+      {updateContent ? (
+        <Modal id="modal" open={isModalOpen} onClose={handleCloseModel}>
+          <form action="POST" id="formContent">
+            <h2>Update Product Content </h2>
+            <p>*Leave any unchanged fields empty*</p>
 
-    <TextField
-        type="altText"
-        name="altText"
-        id="altText"
-        variant='outlined'
-        size='small'
-        label="Alt Text"
-        value={altText}
-        onChange={e => setAltText(e.target.value)}
-        placeholder='Alt Text'
-    />
-    <TextField
-        type="productName"
-        name="productName"
-        id="productName"
-        variant='outlined'
-        size='small'
-        label="Product Name"
-        value={productName}
-        onChange={e => setProductName(e.target.value)}
-        placeholder="Product Name"
-    />
-    <TextField
-        type="price"
-        name="price"
-        id="price"
-        accept='number'
-        variant='outlined'
-        size='small'
-        label="Price (Numbers only)"
-        value={price}
-        onChange={e => setPrice(e.target.value)}
-        placeholder="$0"
-    />
-        <TextField
-        type="description"
-        name="description"
-        id="description"
-        variant='outlined'
-        size='small'
-        label=" Product Description"
-        value={description}
-        onChange={e => setDescription(e.target.value)}
-        placeholder='Product Description'
-    />
-        <TextField
-        type="quantity"
-        name="quantity"
-        id="quantity"
-        accept="number"
-        variant='outlined'
-        size='small'
-        label="Quantity (Numbers only)"
-        value={quantity}
-        onChange={e => setQuantity(e.target.value)}
-        placeholder="quantity"
-    />
-    {/* For this item, I want to create a drop down menu */}
-    <FormControl>
-     <FormLabel id="Tag">Tag</FormLabel>
-     <RadioGroup>
-    <FormControlLabel value="Fall"  control={<Radio />}  onChange={handleTagChange} label="Fall" />
-    <FormControlLabel value="Winter" control={<Radio />} onChange={handleTagChange} label="Winter" />
-    <FormControlLabel value="Spring" control={<Radio />} onChange={handleTagChange} label="Spring" />
-    <FormControlLabel value="Summer" control={<Radio />}  onChange={handleTagChange} label="Summer" />
-    </RadioGroup>
-
-</FormControl>
-<Button variant='contained' type="submit" onClick={(e)=> update(e)}>Update </Button>
-</form>
-</Modal>
-    : updateImage?  
-    <Modal id ="modal" open={isModalOpen} onClose={handleCloseModel}>
-        <form  action="POST" id ="formContent">
-        <h2>Update Product Image </h2>
-        <input
-        type="file"
-        accept="image/*"
-        id="file"
-        onChange={e => setSelectedFile(e.target.files[0])}
-        />
-        <Button  variant='contained' type="submit" onClick={(e)=> updateImg(e)}>Update Image </Button>
-        </form>
-        </Modal> 
-        : deleteProduct ? 
+            <TextField
+              type="altText"
+              name="altText"
+              id="altText"
+              variant="outlined"
+              size="small"
+              label="Alt Text"
+              value={altText}
+              onChange={(e) => setAltText(e.target.value)}
+              placeholder="Alt Text"
+            />
+            <TextField
+              type="productName"
+              name="productName"
+              id="productName"
+              variant="outlined"
+              size="small"
+              label="Product Name"
+              value={productName}
+              onChange={(e) => setProductName(e.target.value)}
+              placeholder="Product Name"
+            />
+            <TextField
+              type="price"
+              name="price"
+              id="price"
+              accept="number"
+              variant="outlined"
+              size="small"
+              label="Price (Numbers only)"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              placeholder="$0"
+            />
+            <TextField
+              type="description"
+              name="description"
+              id="description"
+              variant="outlined"
+              size="small"
+              label=" Product Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder="Product Description"
+            />
+            <TextField
+              type="quantity"
+              name="quantity"
+              id="quantity"
+              accept="number"
+              variant="outlined"
+              size="small"
+              label="Quantity (Numbers only)"
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
+              placeholder="quantity"
+            />
+            {/* For this item, I want to create a drop down menu */}
+            <FormControl>
+              <FormLabel id="Tag">Tag</FormLabel>
+              <RadioGroup>
+                <FormControlLabel
+                  value="Sedona"
+                  onChange={handleTagChange}
+                  control={<Radio />}
+                  label="Sedona"
+                />
+                <FormControlLabel
+                  value="BW"
+                  onChange={handleTagChange}
+                  control={<Radio />}
+                  label="Black and White"
+                />
+                <FormControlLabel
+                  value="FunGuys"
+                  onChange={handleTagChange}
+                  control={<Radio />}
+                  label="Fun Guys"
+                />
+                <FormControlLabel
+                  value="Jo"
+                  onChange={handleTagChange}
+                  control={<Radio />}
+                  label="Jo"
+                />
+              </RadioGroup>
+            </FormControl>
+            <Button
+              variant="contained"
+              type="submit"
+              onClick={(e) => update(e)}
+            >
+              Update{" "}
+            </Button>
+          </form>
+        </Modal>
+      ) : updateImage ? (
+        <Modal id="modal" open={isModalOpen} onClose={handleCloseModel}>
+          <form action="POST" id="formContent">
+            <h2>Update Product Image </h2>
+            <input
+              type="file"
+              accept="image/*"
+              id="file"
+              onChange={(e) => setSelectedFile(e.target.files[0])}
+            />
+            <Button
+              variant="contained"
+              type="submit"
+              onClick={(e) => updateImg(e)}
+            >
+              Update Image{" "}
+            </Button>
+          </form>
+        </Modal>
+      ) : deleteProduct ? (
         <Modal id="modal" open={isModalOpen} onClose={handleCloseModel}>
             <form id ="formContent" action="POST">
                 <h2>Are you sure you want to delete this item?</h2>
-         <Button id="button"  variant='contained' type="submit" onClick={(e)=> deleteProd(e)}>Delete Product </Button>
+         <Button variant='contained' type="submit" onClick={(e)=> deleteProd(e)}>Delete Product </Button>
          </form>
-         </Modal> 
+         </Modal> )
         : null}
     <div id="cards">
-    {
+
+    {products.length > 0 ?(
     products.map((product) => {
         return(
     <Card sx={{ maxWidth: 300 }}>
-      <CardMedia
+      <CardMedia 
         component="img"
         alt={product.altText}
-        height="400"
+        style={{ height: 300, width: 300 }}
         image={product.imageUrl}
+    
       />
-      <CardContent>
+      <CardContent >
         <Typography gutterBottom variant="h7" component="div">
           {`Name: ${product.productName}`}
         </Typography>
@@ -317,10 +350,10 @@ let deleteProd = async (e)=> {
       </CardActions>
     </Card>)
     
-    })}
+    })) : <h1>No products</h1> }
     </div>
     </>
-    )
+  );
 
 
 
