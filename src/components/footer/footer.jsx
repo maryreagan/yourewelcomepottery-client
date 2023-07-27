@@ -2,9 +2,9 @@ import React from 'react'
 import MarkunreadIcon from '@mui/icons-material/Markunread';
 import Link from '@mui/material/Link';
 import InstagramIcon from '@mui/icons-material/Instagram';
-
 import "./footer.css"
-import stripes from "../../../public/stripes.png"
+import stripes from "/stripes.png"
+
 function Footer() {
   let handleInsta = () =>{
     window.location.href = "https://www.instagram.com/yourewelcomepottery/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"
@@ -23,7 +23,7 @@ function Footer() {
       <h4>Location: 309 Plus Park DriveStudio 147, Nashville, TN 37217</h4>
       <h4>Hours of Operations: By Appointment Only</h4>
       </div>
-      <span class="divider1" />
+      <span className="divider1" />
       <div id= "email">
         <div id="instagramEmail">
       <button id="btn" onClick={handleInsta}>
@@ -52,7 +52,7 @@ function Footer() {
         </Link>
 
       </div>
-      <span class="divider" />
+      <span className="divider" />
       <img src={stripes} alt="P" />
     </div>
     </div>

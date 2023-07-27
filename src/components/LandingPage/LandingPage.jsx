@@ -10,10 +10,8 @@ function LandingPage({ products, handleAddToCart }) {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const tagFilter = searchParams.get("tag");
-  console.log(tagFilter);
 
   useEffect(() => {
-    console.log("displayedProducts", displayedProducts);
     setCurrentTabValue(tagFilter || "");
   }, [tagFilter]);
 
@@ -44,24 +42,9 @@ function LandingPage({ products, handleAddToCart }) {
           onChange={handleTabChange}
         >
           <Tab label="All Items" value="" component={Link} to="." />
-          <Tab
-            label="Sedona"
-            value="sedona"
-            component={Link}
-            to="?tag=sedona"
-          />
-          <Tab
-            label="Black and White"
-            value="bw"
-            component={Link}
-            to="?tag=bw"
-          />
-          <Tab
-            label="Fun Guys"
-            value="funguys"
-            component={Link}
-            to="?tag=funguys"
-          />
+          <Tab label="Sedona" value="sedona" component={Link} to="?tag=sedona" />
+          <Tab label="Black and White" value="bw" component={Link} to="?tag=bw" />
+          <Tab label="Fun Guys" value="funguys" component={Link} to="?tag=funguys"/>
           <Tab label="Jo" value="jo" component={Link} to="?tag=jo" />
         </Tabs>
       </nav>
