@@ -60,7 +60,7 @@ function Cart( { cart, removeFromCart, quantityDecrement, handleAddToCart } ) {
                   image={item.imageUrl}
                   alt={item.altText}
                 />
-                <Typography variant="h5" component="div">
+                <Typography variant="h6" component="div">
                   {item.productName}
                 </Typography>
                 <Typography sx={{ mb: 1.5 }} color="text.secondary">
