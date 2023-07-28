@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@mui/material";
+import "./Checkout.css"
 
 function Success() {
   return (
@@ -8,13 +8,11 @@ function Success() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-        fontFamily: "Arial",
+        marginTop: "2em"
       }}
     >
 
-      <h1>Thank you for your purchase 🎉</h1>
+      <h1 className="title">Thank you for your purchase. 🎉</h1>
     </div>
   );
 }
