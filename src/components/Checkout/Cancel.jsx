@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@mui/material";
+import "./Checkout.css"
 
 function Cancel() {
   return (
@@ -8,15 +8,10 @@ function Cancel() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-        fontFamily: "Courier New, monospace",
+        marginTop: "2em",
       }}
     >
-
-      <h1 style={{ fontFamily: "Arial" }}>
-        😢 transaction canceled
-      </h1>
+      <h1 className="title">Transaction cancelled. 😢</h1>
     </div>
   );
 }
