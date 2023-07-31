@@ -3,6 +3,7 @@ import { useSearchParams, Link } from "react-router-dom"
 import "./LandingPage.css"
 import ProductCard from './ProductCard'
 import { Tabs, Tab } from "@mui/material";
+import Typography from "@mui/material/Typography";
 
 
 function LandingPage({ products, handleAddToCart }) {
@@ -49,10 +50,11 @@ function LandingPage({ products, handleAddToCart }) {
         </Tabs>
       </nav>
       {displayedProducts.length === 0 && (
-        <h2 className="no-products">
+      <Typography variant="h5" color="primary" align="center" marginTop="2em"> 
           There are currently no products available in this line. Check back
           later!
-        </h2>
+        </Typography>
+        
       )}
 
       {/* Maps through displayedProducts and returns a grid with items in ProductCard component */}
