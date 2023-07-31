@@ -44,7 +44,7 @@ function Cart( { cart, removeFromCart, quantityDecrement, handleAddToCart } ) {
     <div className="container">
       <h1 className="title">Shopping Cart</h1>
       {cart.length === 0 ? (
-        <Typography variant="h3">
+        <Typography variant="h5" color="primary" align="center" marginTop="2em">
           Your cart is empty. Start shopping!
         </Typography>
       ) : (
@@ -60,10 +60,10 @@ function Cart( { cart, removeFromCart, quantityDecrement, handleAddToCart } ) {
                   image={item.imageUrl}
                   alt={item.altText}
                 />
-                <Typography variant="h5" component="div">
+                <Typography variant="h6" component="div">
                   {item.productName}
                 </Typography>
-                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                <Typography sx={{ mb: 1.5 }} color="text.primary">
                   ${item.price}
                 </Typography>
                 <Typography
@@ -98,11 +98,11 @@ function Cart( { cart, removeFromCart, quantityDecrement, handleAddToCart } ) {
           ))}
         </div>
       )}
-      <Typography variant="h5">Total: ${totalPrice}</Typography>
+      <Typography variant="h6" color="primary" margin="1em">Total: ${totalPrice}</Typography>
       <Button size="large" variant="contained" onClick={checkout}>
         Checkout
       </Button>
-      <Typography variant="h6">
+      <Typography variant="body1" fontStyle={'italic'} margin="1em">
         Click checkout for taxes and shipping
       </Typography>
     </div>
