@@ -5,7 +5,6 @@ import "./Checkout.css"
 
 function Success() {
   useEffect(() => {
-
    const urlParams = new URLSearchParams(window.location.search);
    const ids = urlParams.get("ids").split(",");
    const quantities = urlParams.get("quantities").split(",");
