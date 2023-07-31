@@ -5,15 +5,13 @@ import "./Checkout.css"
 
 function Success() {
   useEffect(() => {
-   const urlParams = new URLSearchParams(window.location.search);
-   const ids = urlParams.get("ids").split(",");
-   const quantities = urlParams.get("quantities").split(",");
+    const urlParams = new URLSearchParams(window.location.search);
+    const ids = urlParams.get("ids").split(",");
+    const quantities = urlParams.get("quantities").split(",");
     const body = {
       ids: ids,
       quantities: quantities,
     };
-
-    
 
     fetch(`http://127.0.0.1:4000/products/retrieve`, {
       method: "PUT",
