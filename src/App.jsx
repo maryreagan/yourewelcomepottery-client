@@ -5,16 +5,28 @@ import Admin from "./components/Admin/Admin";
 import LandingPage from "./components/LandingPage/LandingPage";
 import Bio from "./components/Bio/Bio";
 import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/footer/footer";
+import Footer2 from "./components/footer/Footer2";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material";
 import Cart from "./components/Cart/Cart";
 import Success from "./components/Checkout/Success";
 import Cancel from "./components/Checkout/Cancel";
 import NotFound from "./components/NotFound"
+import salsa from "./fonts/Salsa-Regular.ttf";
 
 const theme = createTheme({
-
+  typography: {
+    fontFamily: [
+          "Roboto",
+          "Helvetica",
+          "Arial",
+          "sans-serif",
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+          "Segoe UI Symbol",
+          "Salsa-Regular"
+        ].join(","),
+  },
 
   palette: {
     primary: {
@@ -109,7 +121,7 @@ const handleAddToCart = (product) => {
           <Route path ="*" element={<NotFound />}/>
         </Routes>
       </BrowserRouter>
-      <Footer />
+      <Footer2 />
     </ThemeProvider>
 
   );

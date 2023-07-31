@@ -33,7 +33,7 @@ function Navbar({ cart }) {
       <div className="container">
         <img src={logo} alt="<You're Welcome Pottery Logo>" className="logo" />
 
-        <h1 className="title">You're Welcome Pottery</h1>
+        {/* <h1 className="title">You're Welcome Pottery</h1> */}
         <Tabs
           className="tabs"
           value={currentTabValue}
