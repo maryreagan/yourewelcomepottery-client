@@ -65,7 +65,7 @@ export default function Footer2() {
             GET IN TOUCH
           </Typography>
           <Typography color="secondary" align="center">
-            309 Plus Park DriveStudio 147 | Nashville, TN | 37217
+            309 Plus Park Drive | Studio 147 | Nashville, TN | 37217
           </Typography>
           <Typography color="secondary" align="center">
             By Appointment Only
