@@ -51,7 +51,7 @@ function App() {
         .then((data) => {
           if(!data) setFlag(false);
           setProducts(data)} );
-    }, []);
+    }, [products]);
 
 
 const handleAddToCart = (product) => {
