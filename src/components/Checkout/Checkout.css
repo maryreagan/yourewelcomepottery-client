@@ -1,0 +1,9 @@
+@font-face{
+    font-family: "Salsa-Regular";
+    src: url("src/fonts/salsa-regular.ttf") format("truetype")
+
+}
+
+.title{
+    font-family: "Salsa-Regular";
+}

@@ -1,0 +1,15 @@
+
+body {
+    margin: 0;
+    padding: 0; 
+    
+}
+
+.footer-wrapper{
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    background-color:#a04d31;
+    padding: 1em;
+  
+}
