@@ -1,6 +1,8 @@
 @font-face{
     font-family: "Salsa-Regular";
-    src: url("src/fonts/salsa-regular.ttf") format("truetype")
+
+    src: url("../../fonts/salsa-regular.ttf") format("truetype")
+
 
 }
 
