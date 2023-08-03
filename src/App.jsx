@@ -13,6 +13,8 @@ import Success from "./components/Checkout/Success";
 import Cancel from "./components/Checkout/Cancel";
 import NotFound from "./components/NotFound"
 import salsa from "./fonts/Salsa-Regular.ttf";
+import "./fonts/fonts.css";
+
 
 const theme = createTheme({
   typography: {
@@ -51,10 +53,7 @@ function App() {
         .then((data) => {
           if(!data) setFlag(false);
           setProducts(data)} );
-
     }, [products]);
-
-
 
 const handleAddToCart = (product) => {
   const productInCart = cart.find((item) => item._id === product._id);
