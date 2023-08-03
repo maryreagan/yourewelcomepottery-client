@@ -12,7 +12,8 @@ import Cart from "./components/Cart/Cart";
 import Success from "./components/Checkout/Success";
 import Cancel from "./components/Checkout/Cancel";
 import NotFound from "./components/NotFound"
-import SalsaRegular from "./fonts/Salsa-Regular.ttf";
+import salsa from "./fonts/Salsa-Regular.ttf";
+import "./fonts/fonts.css";
 
 const theme = createTheme({
   typography: {

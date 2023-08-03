@@ -1,6 +1,5 @@
 import React, {useEffect} from "react";
-import "./Checkout.css"
-
+import { Typography } from "@mui/material";
 
 
 function Success() {
@@ -40,7 +39,17 @@ function Success() {
         marginTop: "2em",
       }}
     >
-      <h1 className="title">Thank you for your purchase. 🎉</h1>
+      <Typography
+        variant="h4"
+        align="center"
+        mb={2}
+        marginTop="1em"
+        color="primary"
+        fontFamily="Salsa-Regular"
+      >
+        Thank you for your purchase. 🎉
+      </Typography>
+      
     </div>
   );
 }

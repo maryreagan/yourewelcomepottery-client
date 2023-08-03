@@ -1,5 +1,5 @@
 import React from "react";
-import "./Checkout.css"
+import { Typography } from "@mui/material";
 
 function Cancel() {
   return (
@@ -11,7 +11,16 @@ function Cancel() {
         marginTop: "2em",
       }}
     >
-      <h1 className="title">Transaction cancelled. 😢</h1>
+      <Typography
+        variant="h4"
+        align="center"
+        mb={2}
+        marginTop="1em"
+        color="primary"
+        fontFamily="Salsa-Regular"
+      >
+        Transaction cancelled. 😢
+      </Typography>
     </div>
   );
 }
