@@ -1,5 +1,7 @@
 import React from "react";
+
 import { Typography } from "@mui/material";
+
 
 function Cancel() {
   return (
@@ -11,6 +13,7 @@ function Cancel() {
         marginTop: "2em",
       }}
     >
+
       <Typography
         variant="h4"
         align="center"
@@ -21,6 +24,7 @@ function Cancel() {
       >
         Transaction cancelled. 😢
       </Typography>
+
     </div>
   );
 }
