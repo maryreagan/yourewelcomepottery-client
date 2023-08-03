@@ -15,6 +15,7 @@ import NotFound from "./components/NotFound"
 import salsa from "./fonts/Salsa-Regular.ttf";
 import "./fonts/fonts.css";
 
+
 const theme = createTheme({
   typography: {
     fontFamily: [
@@ -53,7 +54,6 @@ function App() {
           if(!data) setFlag(false);
           setProducts(data)} );
     }, [products]);
-
 
 const handleAddToCart = (product) => {
   const productInCart = cart.find((item) => item._id === product._id);

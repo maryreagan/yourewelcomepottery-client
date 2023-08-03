@@ -1,5 +1,7 @@
 import React, {useEffect} from "react";
+
 import { Typography } from "@mui/material";
+
 
 
 function Success() {
@@ -39,6 +41,7 @@ function Success() {
         marginTop: "2em",
       }}
     >
+
       <Typography
         variant="h4"
         align="center"
@@ -50,6 +53,7 @@ function Success() {
         Thank you for your purchase. 🎉
       </Typography>
       
+
     </div>
   );
 }
