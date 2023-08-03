@@ -42,7 +42,16 @@ function Cart( { cart, removeFromCart, quantityDecrement, handleAddToCart } ) {
 
   return (
     <div className="container">
-      <h1 className="title">Shopping Cart</h1>
+      <Typography
+        variant="h4"
+        align="center"
+        mb={2}
+        marginTop="1em"
+        color="primary"
+        fontFamily="Salsa-Regular"
+      >
+      Shopping Cart
+      </Typography>
       {cart.length === 0 ? (
         <Typography variant="h5" color="primary" align="center" marginTop="2em">
           Your cart is empty. Start shopping!
@@ -98,11 +107,13 @@ function Cart( { cart, removeFromCart, quantityDecrement, handleAddToCart } ) {
           ))}
         </div>
       )}
-      <Typography variant="h6" color="primary" margin="1em">Total: ${totalPrice}</Typography>
+      <Typography variant="h6" color="primary" margin="1em">
+        Total: ${totalPrice}
+      </Typography>
       <Button size="large" variant="contained" onClick={checkout}>
         Checkout
       </Button>
-      <Typography variant="body1" fontStyle={'italic'} margin="1em">
+      <Typography variant="body1" fontStyle={"italic"} margin="1em">
         Click checkout for taxes and shipping
       </Typography>
     </div>
