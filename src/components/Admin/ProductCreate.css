@@ -55,3 +55,26 @@ justify-content: center;}
 
 
 #button{margin-left: 25vw; margin-right: 25vw}
+
+/* #file {
+  display: none;
+} */
+
+/* Style the custom button */
+/* .custom-file-button {
+  display: inline-block;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  padding: 10px 20px;
+  background-color: #a14b30;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.59);
+}
+
+.custom-file-button:hover {
+    background-color: #8c412a;
+} */
