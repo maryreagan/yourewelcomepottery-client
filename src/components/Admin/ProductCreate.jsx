@@ -65,90 +65,110 @@ let handleTagChange = (e) => {
 
 
     return (
-    <>
-        <form action="POST"
-        id="form">
-            <h2>Upload Product </h2>
-        <input
-        type="file"
-        accept="image/*"
-        id="file"
-        onChange={e => setSelectedFile(e.target.files[0])}
-        />
-        <TextField
+      <>
+        <form action="POST" id="form">
+          <h2>Upload Product </h2>
+          <input
+            type="file"
+            accept="image/*"
+            id="file"
+            onChange={(e) => setSelectedFile(e.target.files[0])}
+          />
+  
+          <TextField
             type="altText"
             name="altText"
             id="altText"
-            variant='outlined'
-            size='small'
+            variant="outlined"
+            size="small"
             label="Alt Text"
             value={altText}
-            onChange={e => setAltText(e.target.value)}
-            placeholder='Alt Text'
-        />
-        <TextField
+            onChange={(e) => setAltText(e.target.value)}
+            placeholder="Alt Text"
+          />
+          <TextField
             type="productName"
             name="productName"
             id="productName"
-            variant='outlined'
-            size='small'
+            variant="outlined"
+            size="small"
             label="Product Name"
             value={productName}
-            onChange={e => setProductName(e.target.value)}
+            onChange={(e) => setProductName(e.target.value)}
             placeholder="Product Name"
-        />
-        <TextField
+          />
+          <TextField
             type="price"
             name="price"
             id="price"
-            accept='number'
-            variant='outlined'
-            size='small'
+            accept="number"
+            variant="outlined"
+            size="small"
             label="Price (Numbers only)"
             value={price}
-            onChange={e => setPrice(e.target.value)}
+            onChange={(e) => setPrice(e.target.value)}
             placeholder="$0"
-        />
-            <TextField
+          />
+          <TextField
             type="description"
             name="description"
             id="description"
-            variant='outlined'
-            size='small'
+            variant="outlined"
+            size="small"
             label=" Product Description"
             value={description}
-            onChange={e => setDescription(e.target.value)}
-            placeholder='Product Description'
-        />
-            <TextField
+            onChange={(e) => setDescription(e.target.value)}
+            placeholder="Product Description"
+          />
+          <TextField
             type="quantity"
             name="quantity"
             id="quantity"
             accept="number"
-            variant='outlined'
-            size='small'
+            variant="outlined"
+            size="small"
             label="Quantity (Numbers only)"
             value={quantity}
-            onChange={e => setQuantity(e.target.value)}
+            onChange={(e) => setQuantity(e.target.value)}
             placeholder="quantity"
-        />
-        {/* For this item, I want to create a drop down menu */}
-    <FormControl>
-         <FormLabel id="Tag">Tag</FormLabel>
+          />
+          {/* For this item, I want to create a drop down menu */}
+          <FormControl>
+            <FormLabel id="Tag">Tag</FormLabel>
 
-         <RadioGroup >
-        <FormControlLabel value="Sedona" onChange={handleTagChange} control={<Radio />} label="Sedona" />
-        <FormControlLabel value="BW" onChange={handleTagChange} control={<Radio />} label="Black and White" />
-        <FormControlLabel value="FunGuys" onChange={handleTagChange} control={<Radio />} label="Fun Guys" />
-        <FormControlLabel value="Jo" onChange={handleTagChange} control={<Radio />} label="Jo" />
-        </RadioGroup>
-
-    </FormControl>
-<Button variant='contained' type="submit" onClick={upload}>Submit</Button>
-
+            <RadioGroup>
+              <FormControlLabel
+                value="Sedona"
+                onChange={handleTagChange}
+                control={<Radio />}
+                label="Sedona"
+              />
+              <FormControlLabel
+                value="BW"
+                onChange={handleTagChange}
+                control={<Radio />}
+                label="Black and White"
+              />
+              <FormControlLabel
+                value="FunGuys"
+                onChange={handleTagChange}
+                control={<Radio />}
+                label="Fun Guys"
+              />
+              <FormControlLabel
+                value="Jo"
+                onChange={handleTagChange}
+                control={<Radio />}
+                label="Jo"
+              />
+            </RadioGroup>
+          </FormControl>
+          <Button variant="contained" type="submit" onClick={upload}>
+            Submit
+          </Button>
         </form>
-    </>
-  )
+      </>
+    );
 }
 
 export default ProductCreate

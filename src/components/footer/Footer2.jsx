@@ -22,7 +22,7 @@ export default function Footer2() {
   }
   
   let handleEmail = () => {
-    let email = "emma.boyd.elliott@gmail.com"
+    let email = "yourewelcomepotteryapi@gmail.com"
     let mailTo = `mailto:${email}`
     window.location.href = mailTo
   }
