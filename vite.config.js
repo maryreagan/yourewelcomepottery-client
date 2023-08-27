@@ -8,8 +8,9 @@ export default defineConfig({
     rollupOptions: {
       output: {
         assetFileNames: "src/fonts", // This sets the output path for assets (including fonts)
+
         entryFileNames: "js/app-[name]-[hash].js", // This sets the output pattern for entry (main) JavaScript files
-        chunkFileNames: "js/chunk-[name]-[hash].js", // This sets the output pattern for chunk (split) JavaScript files
+
       },
     },
     assetsInclude: /\.(woff|woff2|ttf|eot|otf)$/i, // Include common font file extensions
