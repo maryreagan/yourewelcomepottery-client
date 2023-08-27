@@ -46,7 +46,7 @@ function Navbar({ cart }) {
           onChange={handleTabChange}
         >
           <Tab label="Home" component={Link} to="/">
-            Home
+            Shop
           </Tab>
           <Tab label="About" component={Link} to="/about">
             About
