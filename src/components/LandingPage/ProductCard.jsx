@@ -38,7 +38,7 @@ function ProductCard( { product, onAddToCart } ) {
       <CardMedia
         component="img"
         style={{ height: 300, width: 300 }}
-        image={product.imageUrl}
+        image={product.multipleImgs[0]}
         alt={product.altText}
       />
       <CardContent sx={{ backgroundColor: theme.palette.secondary.main }}>

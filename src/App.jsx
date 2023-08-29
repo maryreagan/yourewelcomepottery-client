@@ -41,19 +41,30 @@ const theme = createTheme({
 });
 
 function App() {
+const getAll = () => {
+  fetch("http://127.0.0.1:4000/products/all")
+    .then((res) => res.json())
+    .then((data) => {
+      if(!data) setFlag(false);
+      setProducts(data)} );
 
+}
 
   const [cart, setCart] = useState([]);
   const [products, setProducts] = useState([]);
   const [flag, setFlag] = useState(true);
+  const [display, setDisplay] = useState(false)
 
     useEffect(() => {
-      fetch("http://127.0.0.1:4000/products/all")
-        .then((res) => res.json())
-        .then((data) => {
-          if(!data) setFlag(false);
-          setProducts(data)} );
-    }, [products]);
+      getAll()
+    }, [display]);
+    // useEffect(() => {
+    //   fetch("http://127.0.0.1:4000/products/all")
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       if(!data) setFlag(false);
+    //       setProducts(data)} );
+    // }, [products]);
 
 const handleAddToCart = (product) => {
   const productInCart = cart.find((item) => item._id === product._id);

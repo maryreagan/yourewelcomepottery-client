@@ -113,7 +113,7 @@ function Auth({updateLocalStorage, email, setEmail}) {
             onChange={e => setEmail(e.target.value)}
             placeholder='Email'
         />
-        <Button variant = "contained" type="submit" onClick = {sendRecoveryEmail}>Send Email</Button>
+        <Button variant = "contained" type="submit" onClick = {() => sendRecoveryEmail}>Send Email</Button>
         </div>
      :
      RecoverEmail?
@@ -131,7 +131,7 @@ function Auth({updateLocalStorage, email, setEmail}) {
             onChange={e => setUserOTP(e.target.value)}
             placeholder='Secret Code'
         />
-        <Button variant = "contained" type="submit" onClick = {renewPassword}>Submit</Button>
+        <Button variant = "contained" type="submit" onClick = {() => renewPassword}>Submit</Button>
         {wrongCode?  <p style={{color: "red"}}>Wrong Code. Try again</p> : <p></p>}
         </div>
         : resetPassword?
@@ -174,7 +174,7 @@ function Auth({updateLocalStorage, email, setEmail}) {
             onChange={e => setPassword(e.target.value)}
             placeholder="Product Name"
         />
-        <Button  variant='contained' type="submit" onClick={submitLogin}>Login </Button>
+        <Button  variant='contained' type="submit" onClick={() => submitLogin}>Login </Button>
         <Button  variant='contained' type='submit' onClick={() => setForgotPassword(true)}>Forgot Password</Button>
 
     </div>

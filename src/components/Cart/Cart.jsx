@@ -68,7 +68,7 @@ function Cart( { cart, removeFromCart, quantityDecrement, handleAddToCart } ) {
                 <CardMedia
                   component="img"
                   style={{ height: 150 }}
-                  image={item.imageUrl}
+                  image={item.multipleImgs[0]}
                   alt={item.altText}
                 />
                 <Typography variant="h6" component="div">
