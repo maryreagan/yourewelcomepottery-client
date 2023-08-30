@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import { TextField, Button } from '@mui/material'
 import jwt_decode from 'jwt-decode'
 import "./ProductCreate.css"
@@ -29,9 +29,9 @@ function Auth({updateLocalStorage, email, setEmail}) {
           let token= data.token;
           let decodedToken = jwt_decode(token);
   
-         updateLocalStorage(data.token,(decodedToken.email));
-         setEmail("")
-         setPassword("")
+        updateLocalStorage(data.token,(decodedToken.email));
+        setEmail("")
+        setPassword("")
     
           
         } catch (err) {
@@ -49,7 +49,7 @@ function Auth({updateLocalStorage, email, setEmail}) {
       let sendRecoveryEmail = async () => {
         try{
     
-          let response = await axios.post(`http://127.0.0.1:4000/password/forgot/${email}`,{
+          await axios.post(`http://127.0.0.1:4000/password/forgot/${email}`,{
             OTP: generateOTP()
           })
           setForgotPassword(false);

@@ -1,10 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import Button from '@mui/material/Button';
 
 import ProductCreate from './ProductCreate'
 import ProductCardUpdate from './ProductCardUpdate'
 import Register from './register'
 import Auth from './auth'
+import LineCreate from './LineCreate';
 function Admin() {
   let [token, setToken] = useState(undefined);
   let [email,setEmail] = useState("")
@@ -38,13 +39,14 @@ function Admin() {
 
   return (
     <>
-    <div>
+    <div className='adminContainer'>
       {!token?(
         <Auth updateLocalStorage={updateLocalStroage} email={email} setEmail={setEmail} />) :(
           <>
         <h3>Welcome: {email} </h3>
         <Button id="logout" variant="contained" onClick={logout}>Logout</Button>
         <Register />
+        <LineCreate/>
         <ProductCreate setProductCreated = {setProductCreated} productCreated={productCreated} />
         <ProductCardUpdate productCreated = {productCreated}/>
         

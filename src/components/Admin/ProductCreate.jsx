@@ -1,4 +1,4 @@
-import {useState}from 'react'
+import {useState, useEffect}from 'react'
 import { TextField, InputAdornment, Button, Radio, FormControlLabel, FormControl, FormLabel, RadioGroup } from '@mui/material'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 
@@ -6,7 +6,7 @@ import axios from 'axios'
 import "./ProductCreate.css"
 const allFiles =[]
 function ProductCreate( {productCreated, setProductCreated}) {
-const [ selectedFile, setSelectedFile ] = useState(null)
+const [ selectedFile] = useState(null)
 const [ altText, setAltText ] = useState('')
 const [ productName , setProductName ] = useState('')
 const [ description, setDescription ] = useState('')
@@ -14,10 +14,13 @@ const [price, setPrice ] = useState("")
 const [ quantity, setQuantity ] = useState("")
 const [ tag, setTag ] = useState("")
 const [multipleImgs, setMultiple] = useState(null)
+const [lines, setLines] = useState([])
+const [lineName, setLineName] = useState("")
+const [refresh] = useState(false)
 
 const handleImageChange = (e) => {
   console.log(allFiles)
-  const {name, files} = e.target
+  const {files} = e.target
   allFiles.push(files[0])
   // if(name == 'multipleImgs'){
   //   for(let i = 0; i < files.length; i++){
@@ -31,7 +34,20 @@ const handleImageChange = (e) => {
   console.log(allFiles)
   console.log(multipleImgs)
 }
+useEffect(() => {
+  getLines()
+  console.log(lines)
+}, [refresh])
+let getLines = () => {
+  fetch(`http://localhost:4000/line/`)
+  .then((res) => res.json())
+  .then((data) => {
+      console.log(data)
+      setLines(data.lines)
+  }
+  )
 
+}
 const handleRemoveImages = () => {
   setMultiple({
     multipleImgs: null
@@ -53,12 +69,14 @@ const upload = async (e) => {
     formData.append('price', price)
     formData.append('quantity', quantity)
     formData.append('tag', tag)
+    formData.append("line", lineName);
     if(multipleImgs){
       for (let i = 0; i < multipleImgs.length; i++) {
           formData.append('multipleImgs', multipleImgs[i]);
           console.log(multipleImgs[i])
       }
   }
+  console.log(formData)
     try{
             await axios.post('http://127.0.0.1:4000/products/create', 
             formData,{
@@ -87,10 +105,7 @@ const upload = async (e) => {
     }
 }
 
-let handleTagChange = (e) => {
-    setTag(e.target.value)
 
-}
 
     
 
@@ -187,30 +202,17 @@ let handleTagChange = (e) => {
             <FormLabel id="Tag">Tag</FormLabel>
 
             <RadioGroup>
-              <FormControlLabel
-                value="Sedona"
-                onChange={handleTagChange}
-                control={<Radio />}
-                label="Sedona"
-              />
-              <FormControlLabel
-                value="BW"
-                onChange={handleTagChange}
-                control={<Radio />}
-                label="Black and White"
-              />
-              <FormControlLabel
-                value="FunGuys"
-                onChange={handleTagChange}
-                control={<Radio />}
-                label="Fun Guys"
-              />
-              <FormControlLabel
-                value="Jo"
-                onChange={handleTagChange}
-                control={<Radio />}
-                label="Jo"
-              />
+            {lines.map((line, key) => {
+                                    return (
+                                        <FormControlLabel
+                                            key={key}
+                                            value={line._id}
+                                            onChange={() => {setLineName(line.name), setTag(line._id), console.log(lineName, tag)}}
+                                            control={<Radio />}
+                                            label={line.name}
+                                        />
+                                    );
+                                })}
             </RadioGroup>
           </FormControl>
           <Button variant="contained" type="submit" onClick={upload}>

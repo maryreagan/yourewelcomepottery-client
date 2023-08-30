@@ -44,7 +44,7 @@ flex-wrap: wrap;
 gap: 5vw;
 justify-content: center;}
 
-#modal{
+.modal{
     padding-top: 5vw;
     padding-left: 15vw;
     padding-right: 15vw;

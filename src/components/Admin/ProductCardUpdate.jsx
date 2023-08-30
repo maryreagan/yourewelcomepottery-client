@@ -27,6 +27,8 @@ function ProductCardUpdate({ productCreated }) {
     let [refresh, setRefresh] = useState(false);
     const [isModalOpen, setModalOpen] = useState(true);
     const [multipleImgs, setMultiple] = useState(null)
+    const [lines, setLines] = useState([])
+    const [lineName, setLineName] = useState("")
 
 const handleImageChange = (e) => {
   console.log(allFiles)
@@ -85,6 +87,7 @@ const handleRemoveImages = () => {
         formData.append("price", price);
         formData.append("quantity", quantity);
         formData.append("tag", tag);
+        formData.append("line", lineName);
 
         // Submit form-data
 
@@ -115,7 +118,19 @@ const handleRemoveImages = () => {
             }
         }
     };
+    useEffect(() => {
+        getLines()
+    }, [refresh])
+    let getLines = () => {
+        fetch(`http://localhost:4000/line/`)
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data)
+            setLines(data.lines)
+        }
+        )
 
+    }
     let updateImg = async (e) => {
         e.preventDefault();
         let formData = new FormData();
@@ -165,6 +180,8 @@ const handleRemoveImages = () => {
 
     let handleTagChange = (e) => {
         setTag(e.target.value);
+        // setLineName(e.target.name)
+        console.log(lineName)
     };
 
     let handleUpdateContent = (id) => {
@@ -200,7 +217,7 @@ const handleRemoveImages = () => {
         <>
             <h2>Update Content</h2>
             {updateContent ? (
-                <Modal id="modal" open={isModalOpen} onClose={handleCloseModel}>
+                <Modal className="modal" open={isModalOpen} onClose={handleCloseModel}>
                     <form action="POST" id="formContent">
                         <h2>Update Product Content </h2>
                         <p>*Leave any unchanged fields empty*</p>
@@ -266,30 +283,18 @@ const handleRemoveImages = () => {
                         <FormControl>
                             <FormLabel id="Tag">Tag</FormLabel>
                             <RadioGroup>
-                                <FormControlLabel
-                                    value="Sedona"
-                                    onChange={handleTagChange}
-                                    control={<Radio />}
-                                    label="Sedona"
-                                />
-                                <FormControlLabel
-                                    value="BW"
-                                    onChange={handleTagChange}
-                                    control={<Radio />}
-                                    label="Black and White"
-                                />
-                                <FormControlLabel
-                                    value="FunGuys"
-                                    onChange={handleTagChange}
-                                    control={<Radio />}
-                                    label="Fun Guys"
-                                />
-                                <FormControlLabel
-                                    value="Jo"
-                                    onChange={handleTagChange}
-                                    control={<Radio />}
-                                    label="Jo"
-                                />
+                                {lines.map((line, key) => {
+                                    return (
+                                        <FormControlLabel
+                                            key={key}
+                                            value={line._id}
+                                            onChange={() => {setLineName(line.name), setTag(line._id)}}
+                                            control={<Radio />}
+                                            label={line.name}
+                                        />
+                                    );
+                                })}
+                                
                             </RadioGroup>
                         </FormControl>
                         <Button
@@ -392,7 +397,7 @@ const handleRemoveImages = () => {
                                         variant="h7"
                                         component="div"
                                     >
-                                        {`Tag: ${product.tag}`}
+                                        {`Tag: ${product.line}`}
                                     </Typography>
                                     <Typography
                                         variant="body2"
