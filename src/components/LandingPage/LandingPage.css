@@ -17,4 +17,59 @@
   gap:4em;
   padding: 8em;
 }
-
+/* Mobile styling */
+@media (max-width: 768px) {
+    .product-cards-container {
+        padding: 0;
+    }
+    .product-cards-container > div {
+        width: 100%;
+    }
+    .product-cards-container > div > div {
+        width: 100%;
+    }
+    .product-cards-container > div > div > img {
+        width: 100%;
+    }
+    .product-cards-container > div > div > div {
+        width: 100%;
+    }
+    .product-cards-container > div > div > div > h3 {
+        font-size: 1.5rem;
+    }
+    .product-cards-container > div > div > div > p {
+        font-size: 1rem;
+    }
+    .product-cards-container > div > div > div > button {
+        font-size: 1rem;
+    }
+    .product-cards-container > div > div > div > button > a {
+        font-size: 1rem;
+    }
+    .product-cards-container > div > div > div > button > a > i {
+        font-size: 1rem;
+    }
+    .product-cards-container > div > div > div > button > a > i > span {
+        font-size: 1rem;
+    }
+    .product-cards-container > div > div > div > button > a > i > span > span {
+        font-size: 1rem;
+    }
+    .product-cards-container > div > div > div > button > a > i > span > span > span {
+        font-size: 1rem;
+    }
+    .product-cards-container > div > div > div > button > a > i > span > span > span > span {
+        font-size: 1rem;
+    }
+    .product-cards-container > div > div > div > button > a > i > span > span > span > span > span {
+        font-size: 1rem;
+    }
+    .product-cards-container > div > div > div > button > a > i > span > span > span > span > span > span {
+        font-size: 1rem;
+    }
+    .product-cards-container > div > div > div > button > a > i > span > span > span > span > span > span > span {
+        font-size: 1rem;
+    }
+    .product-cards-container > div > div > div > button > a > i > span > span > span > span > span > span > span > span {
+        font-size: 1rem;
+    }

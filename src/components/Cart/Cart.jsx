@@ -12,6 +12,7 @@ import "./Cart.css"
 function Cart( { cart, removeFromCart, quantityDecrement, handleAddToCart } ) {
   const [totalPrice, setTotalPrice] = useState(0);
   const theme = useTheme();
+  const [picture, setPicture] = useState("")
 
   useEffect(() => {
     // Calculate the total price whenever the cart changes
@@ -60,16 +61,19 @@ function Cart( { cart, removeFromCart, quantityDecrement, handleAddToCart } ) {
         </Typography>
       ) : (
         <div className="cart-container">
-          {cart.map((item) => (
-            <Card sx={{ minWidth: 275, maxWidth: 100 }} elevation={24}>
+          {cart.map((item, key) =>
+          (
+            
+            <Card key={key} sx={{ minWidth: 275, maxWidth: 100 }} elevation={24}>
               <CardContent
                 sx={{ backgroundColor: theme.palette.secondary.main }}
               >
                 <CardMedia
                   component="img"
                   style={{ height: 150 }}
-                  image={item.multipleImgs[0]}
+                  image={picture[0]}
                   alt={item.altText}
+                  src={item.multipleImgs[0]}
                 />
                 <Typography variant="h6" component="div">
                   {item.productName}

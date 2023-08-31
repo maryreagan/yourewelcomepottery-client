@@ -14,6 +14,8 @@ import Cancel from "./components/Checkout/Cancel";
 import NotFound from "./components/NotFound"
 import salsa from "./fonts/Salsa-Regular.ttf";
 import "./fonts/fonts.css";
+import ProductPage from "./components/LandingPage/ProductPage";
+import Contact from "./components/Contact/Contact";
 
 
 const theme = createTheme({
@@ -117,6 +119,8 @@ const handleAddToCart = (product) => {
           />
           <Route path="admin" element={<Admin />} />
           <Route path="about" element={<Bio />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="products/:id" element={<ProductPage products={products} handleAddToCart={handleAddToCart} />} />
           <Route
             path="cart"
             element={

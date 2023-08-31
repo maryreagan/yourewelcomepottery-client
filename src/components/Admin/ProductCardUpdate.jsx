@@ -98,7 +98,7 @@ const handleRemoveImages = () => {
                 {
                     headers: {
                         Authorization: localStorage.getItem("token"),
-                        "Content-Type": "multipart/form-data",
+                        "Content-Type": "multipart/form-data"
                     },
                 }
             );
@@ -113,9 +113,9 @@ const handleRemoveImages = () => {
         } catch (err) {
             console.log(err);
 
-            if (err.response.data.message.includes("Cast")) {
-                window.alert("One or more of your inputs is invalid");
-            }
+            // if (err.response.data.message.includes("Cast")) {
+            //     window.alert("One or more of your inputs is invalid");
+            // }
         }
     };
     useEffect(() => {

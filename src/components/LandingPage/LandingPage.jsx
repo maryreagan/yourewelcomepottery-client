@@ -9,9 +9,22 @@ import Typography from "@mui/material/Typography";
 function LandingPage({ products, handleAddToCart }) {
   const [currentTabValue, setCurrentTabValue] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
+  const [lines, setLines] = useState([])
+  const [refresh] = useState(false)
 
   const tagFilter = searchParams.get("tag");
-
+  const getLines = () => {
+    fetch(`http://localhost:4000/line/`)
+    .then((res) => res.json())
+    .then((data) => {
+        console.log(data)
+        setLines(data.lines)
+    }
+    )
+  }
+  useEffect(() => {
+    getLines()
+  }, [refresh])
   useEffect(() => {
     setCurrentTabValue(tagFilter || "");
   }, [tagFilter]);
@@ -26,7 +39,21 @@ function LandingPage({ products, handleAddToCart }) {
         (product) => product.tag.toLowerCase() === tagFilter.toLowerCase()
       )
     : products;
-
+      //if product quantity is 0, show after in stock products
+      if(displayedProducts.length > 0){
+        displayedProducts.sort((a, b) => {
+          if(a.quantity === 0){
+            return 1
+          }
+          else if(b.quantity === 0){
+            return -1
+          }
+          else{
+            return 0
+          }
+        })
+      }
+      
   return (
     <>
       <nav className="links">
@@ -42,11 +69,23 @@ function LandingPage({ products, handleAddToCart }) {
           }}
           onChange={handleTabChange}
         >
+
           <Tab label="All Items" value="" component={Link} to="." />
-          <Tab label="Sedona" value="sedona" component={Link} to="?tag=sedona" />
+          {lines.map((line, key) => {
+            return (
+              <Tab
+                key={key}
+                label={line.name}
+                value={line._id}
+                component={Link}
+                to={`?tag=${line._id}`}
+              />
+            );
+          })}
+          {/* <Tab label="Sedona" value="sedona" component={Link} to="?tag=sedona" />
           <Tab label="Black and White" value="bw" component={Link} to="?tag=bw" />
           <Tab label="Fun Guys" value="funguys" component={Link} to="?tag=funguys"/>
-          <Tab label="Jo" value="jo" component={Link} to="?tag=jo" />
+          <Tab label="Jo" value="jo" component={Link} to="?tag=jo" /> */}
         </Tabs>
       </nav>
       {displayedProducts.length === 0 && (

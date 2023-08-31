@@ -33,15 +33,22 @@ function ProductCard( { product, onAddToCart } ) {
     onAddToCart(product);
   };
 
+  const reroute = (e) => {
+    e.preventDefault();
+    window.location.assign(`/products/${product._id}`);
+  };
+
   return (
-    <Card sx={{ maxWidth: 300 }} elevation={24}>
+    // On click, take user to product's individual page
+    <Card sx={{ maxWidth: 300 }} elevation={24} >
       <CardMedia
+        onClick={reroute}
         component="img"
         style={{ height: 300, width: 300 }}
         image={product.multipleImgs[0]}
         alt={product.altText}
       />
-      <CardContent sx={{ backgroundColor: theme.palette.secondary.main }}>
+      <CardContent sx={{ backgroundColor: theme.palette.secondary.main }} to={`/products/${product._id}`}>
         <Typography gutterBottom variant="h6" component="div">
           {product.productName}
         </Typography>
