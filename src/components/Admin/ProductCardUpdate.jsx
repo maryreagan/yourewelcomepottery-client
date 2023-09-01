@@ -11,7 +11,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import axios from "axios";
 let allFiles = [];
-function ProductCardUpdate({ productCreated }) {
+function ProductCardUpdate() {
     let [products, setProducts] = useState([]);
     const [altText, setAltText] = useState("");
     const [productName, setProductName] = useState("");
@@ -20,7 +20,6 @@ function ProductCardUpdate({ productCreated }) {
     const [quantity, setQuantity] = useState("");
     const [tag, setTag] = useState("");
     let [idContent, setIdContent] = useState("");
-    let [selectedFile, setSelectedFile] = useState(null);
     let [updateContent, setUpdateContent] = useState(false);
     let [updateImage, setUpdateImage] = useState(false);
     let [deleteProduct, setDeleteProduct] = useState(false);
@@ -32,7 +31,7 @@ function ProductCardUpdate({ productCreated }) {
 
 const handleImageChange = (e) => {
   console.log(allFiles)
-  const {name, files} = e.target
+  const {files} = e.target
   allFiles.push(files[0])
   // if(name == 'multipleImgs'){
   //   for(let i = 0; i < files.length; i++){
@@ -178,11 +177,6 @@ const handleRemoveImages = () => {
         }
     };
 
-    let handleTagChange = (e) => {
-        setTag(e.target.value);
-        // setLineName(e.target.name)
-        console.log(lineName)
-    };
 
     let handleUpdateContent = (id) => {
         setIdContent(id);

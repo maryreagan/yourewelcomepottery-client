@@ -1,7 +1,6 @@
-import React from "react";
+
 import { useState } from "react";
 import { TextField, Button, Typography, Box } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
 import axios from "axios";
 import "./Contact.css"
 
@@ -10,7 +9,6 @@ function Contact() {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
 
-    const theme = useTheme();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -19,7 +17,7 @@ function Contact() {
 
     let contactUs = async () => {
         try {
-            let response = await axios.post(
+            await axios.post(
                 `http://127.0.0.1:4000/form/contactUs`,
                 { name, email, message },
                 {

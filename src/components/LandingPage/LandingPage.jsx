@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import { useSearchParams, Link } from "react-router-dom"
 import "./LandingPage.css"
 import ProductCard from './ProductCard'
@@ -6,9 +6,10 @@ import { Tabs, Tab } from "@mui/material";
 import Typography from "@mui/material/Typography";
 
 
-function LandingPage({ products, handleAddToCart }) {
+function LandingPage() {
+  const { products, handleAddToCart } = this.props
   const [currentTabValue, setCurrentTabValue] = useState("");
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const [lines, setLines] = useState([])
   const [refresh] = useState(false)
 
@@ -53,7 +54,7 @@ function LandingPage({ products, handleAddToCart }) {
           }
         })
       }
-      
+
   return (
     <>
       <nav className="links">

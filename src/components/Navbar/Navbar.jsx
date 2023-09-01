@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Tabs, Tab } from "@mui/material";
-import logo from "/logo.png";
+import logo from "../../assets/logo.png";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import IconButton from "@mui/material/IconButton";
 import { Badge } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import "./Navbar.css";
 
-function Navbar({ cart }) {
+function Navbar() {
+  const {cart} = this.props
   const [currentTabValue, setCurrentTabValue] = useState(0);
 
   const handleTabChange = (e, newValue) => {

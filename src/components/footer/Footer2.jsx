@@ -1,13 +1,12 @@
-import * as React from "react";
-import { styled } from "@mui/material/styles";
+
+
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import stripes from "/stripes.png"
+import stripes from "../../assets/stripes.png"
 import "./Footer2.css"
 import { useTheme } from "@mui/material/styles";
 
@@ -16,10 +15,7 @@ import { useTheme } from "@mui/material/styles";
 
 export default function Footer2() {
     const theme = useTheme();
-    let handleInsta = () =>{
-    window.location.href = "https://www.instagram.com/yourewelcomepottery/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"
-    target="_blank"
-  }
+    
   
   let handleEmail = () => {
     let email = "yourewelcomepotteryapi@gmail.com"

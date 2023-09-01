@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import { TextField, Button } from '@mui/material'
 import axios from 'axios'
 import "./ProductCreate.css"
@@ -11,7 +11,7 @@ let registerUser = async (e) => {
     let body = {email , password}
 
     try{
-let response = await axios.post('http://127.0.0.1:4000/admin/register',
+    await axios.post('http://127.0.0.1:4000/admin/register',
     body,{
         headers: {
             'Content-Type':'application/json'

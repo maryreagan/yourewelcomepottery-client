@@ -37,7 +37,7 @@ function LineCreate() {
 
     useEffect(() => {
         let url = "http://localhost:4000/line/"
-        let response = fetch(url, {
+        fetch(url, {
             method: "GET",
             headers: new Headers({
                 "Content-Type": "application/json",
@@ -56,7 +56,7 @@ function LineCreate() {
     useEffect(() => {
         try{
             let url = `http://localhost:4000/line/${id}`
-            let response = fetch(url, {
+            fetch(url, {
                 method: "DELETE",
                 headers: new Headers({
                     "Content-Type": "application/json",
@@ -66,6 +66,7 @@ function LineCreate() {
             .then((res) => res.json())
             .then((data) => {
                 setDelete(false)
+                console.log(data)
             }
             )
         } catch(err){

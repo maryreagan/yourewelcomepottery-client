@@ -1,8 +1,8 @@
-import {useState, useEffect}from 'react'
+import {useState}from 'react'
 import { TextField, Button} from '@mui/material'
-import Modal from "@mui/material/Modal";
 import "./UpdateModal.css"
-function UpdateModal({id}) {
+function UpdateModal() {
+    const {id} =this.props
     const [lineName, setLineName] = useState("")
 
     let update = async (e) => {

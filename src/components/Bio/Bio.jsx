@@ -1,11 +1,8 @@
-import React from 'react'
-import headshot from "/headshot.jpg"
-import studio from "/studio.jpg"
+
+import headshot from "../../assets/headshot.jpg"
+import studio from "../../assets/studio.jpg"
 import "./Bio.css"
-import { useState } from "react";
-import { TextField, Button, Typography, Box } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
-import axios from "axios";
+import {Typography} from "@mui/material";
 
 
 

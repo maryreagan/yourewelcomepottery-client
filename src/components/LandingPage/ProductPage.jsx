@@ -1,13 +1,12 @@
 import {useEffect, useState} from 'react'
 import { Button} from "@mui/material";
-import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import "./ProductPage.css"
 
-function ProductPage({products, handleAddToCart }) {
+function ProductPage() {
+    const {handleAddToCart } = this.props
     const [product, setProduct] = useState({})
     const [refresh] = useState(false)
     const [currentImageIndex, setCurrentImageIndex] = useState(1)

@@ -2,25 +2,34 @@
   "name": "pottery-client",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://maryreagan.github.io/yourewelcomepottery-client/",
   "type": "module",
   "main": "src/App.jsx",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
-    "build": "vite build",
+    "build": "react-scripts build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "start": "react-scripts start",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.1",
     "@mui/material": "^5.14.1",
     "axios": "^1.4.0",
+    "build": "^0.1.4",
     "jwt-decode": "^3.1.2",
     "node": "^20.5.1",
     "nodemon": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.14.2"
+    "react-router-dom": "^6.14.2",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^3.4.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.1",
@@ -28,9 +37,22 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
+    "gh-pages": "^6.0.0",
     "vite": "^4.4.0"
   },
-  "engines": {
-    "node": ">=18.0.0"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "rules": {
+    "react/prop-types": "off"
   }
 }

@@ -3,7 +3,8 @@ import { TextField, Button } from '@mui/material'
 import jwt_decode from 'jwt-decode'
 import "./ProductCreate.css"
 import axios from 'axios'
-function Auth({updateLocalStorage, email, setEmail}) {
+function Auth() {
+  const {updateLocalStorage, email, setEmail} = this.props
     let [password,setPassword] = useState("")
     let [RecoverEmail, setRecoverEmail] = useState(false)
     let [forgotPassword,setForgotPassword] = useState(false)

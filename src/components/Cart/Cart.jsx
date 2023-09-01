@@ -1,5 +1,5 @@
 
-import React, {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import { Typography, ButtonGroup, Button } from "@mui/material";
 import { Card, CardMedia } from "@mui/material";
 import CardActions from "@mui/material/CardActions";
@@ -9,10 +9,11 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { useTheme } from "@mui/material/styles";
 import "./Cart.css"
 
-function Cart( { cart, removeFromCart, quantityDecrement, handleAddToCart } ) {
+function Cart( ) {
+  const { cart, removeFromCart, quantityDecrement, handleAddToCart } = this.props
   const [totalPrice, setTotalPrice] = useState(0);
   const theme = useTheme();
-  const [picture, setPicture] = useState("")
+  const [picture] = useState("")
 
   useEffect(() => {
     // Calculate the total price whenever the cart changes

@@ -12,7 +12,6 @@ import Cart from "./components/Cart/Cart";
 import Success from "./components/Checkout/Success";
 import Cancel from "./components/Checkout/Cancel";
 import NotFound from "./components/NotFound"
-import salsa from "./fonts/Salsa-Regular.ttf";
 import "./fonts/fonts.css";
 import ProductPage from "./components/LandingPage/ProductPage";
 import Contact from "./components/Contact/Contact";
@@ -55,7 +54,7 @@ const getAll = () => {
   const [cart, setCart] = useState([]);
   const [products, setProducts] = useState([]);
   const [flag, setFlag] = useState(true);
-  const [display, setDisplay] = useState(false)
+  const [display] = useState(false)
 
     useEffect(() => {
       getAll()

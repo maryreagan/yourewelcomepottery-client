@@ -5,7 +5,8 @@ import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import axios from 'axios'
 import "./ProductCreate.css"
 const allFiles =[]
-function ProductCreate( {productCreated, setProductCreated}) {
+function ProductCreate() {
+  const {productCreated, setProductCreated} = this.props
 const [ selectedFile] = useState(null)
 const [ altText, setAltText ] = useState('')
 const [ productName , setProductName ] = useState('')

@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import {useState} from 'react'
 import { styled } from "@mui/material/styles";
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
-import { Button, CardActionArea, CardActions } from "@mui/material";
+import { Button, CardActions } from "@mui/material";
 import Collapse from "@mui/material/Collapse";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import IconButton from "@mui/material/IconButton";
@@ -10,7 +10,7 @@ import { useTheme } from "@mui/material/styles";
 import {Link} from "react-router-dom"
 
 const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
+  const {  ...other } = props;
   return <IconButton {...other} />;
 })(({ theme, expand }) => ({
   transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
@@ -20,8 +20,8 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-function ProductCard( { product, onAddToCart } ) {
-
+function ProductCard() {
+  const { product, onAddToCart } = this.props
     const [expanded, setExpanded] = useState(false);
     
     const theme = useTheme();
@@ -34,10 +34,7 @@ function ProductCard( { product, onAddToCart } ) {
     onAddToCart(product);
   };
 
-  const reroute = (e) => {
-    e.preventDefault();
-    window.location.assign(`/products/${product._id}`);
-  };
+
 
   return (
     // On click, take user to product's individual page
