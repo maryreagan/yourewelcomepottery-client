@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {useState, useEffect} from 'react'
 import { useSearchParams, Link } from "react-router-dom"
 import "./LandingPage.css"
@@ -6,8 +7,8 @@ import { Tabs, Tab } from "@mui/material";
 import Typography from "@mui/material/Typography";
 
 
-function LandingPage() {
-  const { products, handleAddToCart } = this.props
+function LandingPage(props) {
+  const { products, handleAddToCart } = props
   const [currentTabValue, setCurrentTabValue] = useState("");
   const [searchParams] = useSearchParams();
   const [lines, setLines] = useState([])

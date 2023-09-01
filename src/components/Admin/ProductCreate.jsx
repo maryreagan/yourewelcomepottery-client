@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {useState, useEffect}from 'react'
 import { TextField, InputAdornment, Button, Radio, FormControlLabel, FormControl, FormLabel, RadioGroup } from '@mui/material'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
@@ -5,8 +6,8 @@ import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import axios from 'axios'
 import "./ProductCreate.css"
 const allFiles =[]
-function ProductCreate() {
-  const {productCreated, setProductCreated} = this.props
+function ProductCreate(props) {
+  const {productCreated, setProductCreated} = props
 const [ selectedFile] = useState(null)
 const [ altText, setAltText ] = useState('')
 const [ productName , setProductName ] = useState('')

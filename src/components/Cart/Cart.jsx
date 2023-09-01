@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 
 import {useState, useEffect} from 'react'
 import { Typography, ButtonGroup, Button } from "@mui/material";
@@ -9,8 +10,8 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { useTheme } from "@mui/material/styles";
 import "./Cart.css"
 
-function Cart( ) {
-  const { cart, removeFromCart, quantityDecrement, handleAddToCart } = this.props
+function Cart(props) {
+  const { cart, removeFromCart, quantityDecrement, handleAddToCart } = props
   const [totalPrice, setTotalPrice] = useState(0);
   const theme = useTheme();
   const [picture] = useState("")

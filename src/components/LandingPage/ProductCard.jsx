@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {useState} from 'react'
 import { styled } from "@mui/material/styles";
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
@@ -20,8 +21,8 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-function ProductCard() {
-  const { product, onAddToCart } = this.props
+function ProductCard(props) {
+  const { product, onAddToCart } = props
     const [expanded, setExpanded] = useState(false);
     
     const theme = useTheme();

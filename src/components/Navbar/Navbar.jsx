@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Tabs, Tab } from "@mui/material";
+import { Tabs, Tab, Button } from "@mui/material";
 import logo from "../../assets/logo.png";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import IconButton from "@mui/material/IconButton";
@@ -8,8 +9,8 @@ import { Badge } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import "./Navbar.css";
 
-function Navbar() {
-  const {cart} = this.props
+function Navbar(props) {
+  const {cart} = props
   const [currentTabValue, setCurrentTabValue] = useState(0);
 
   const handleTabChange = (e, newValue) => {
@@ -24,6 +25,7 @@ function Navbar() {
 
   return (
     <>
+        <Button variant="contained" to={"/admin"}>Admin</Button>
       <div className="checkout-container">
         <Badge badgeContent={productsCount} className="white-badge">
           <IconButton className="cart" component={Link} to="/Cart">

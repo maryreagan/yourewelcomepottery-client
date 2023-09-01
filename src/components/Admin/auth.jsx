@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import {useState} from 'react'
 import { TextField, Button } from '@mui/material'
 import jwt_decode from 'jwt-decode'
 import "./ProductCreate.css"
 import axios from 'axios'
-function Auth() {
-  const {updateLocalStorage, email, setEmail} = this.props
+function Auth(props) {
+  const {updateLocalStorage, email, setEmail} = props
     let [password,setPassword] = useState("")
     let [RecoverEmail, setRecoverEmail] = useState(false)
     let [forgotPassword,setForgotPassword] = useState(false)

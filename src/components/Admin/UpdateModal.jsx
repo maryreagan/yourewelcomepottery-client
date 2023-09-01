@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import {useState}from 'react'
 import { TextField, Button} from '@mui/material'
 import "./UpdateModal.css"
-function UpdateModal() {
-    const {id} =this.props
+function UpdateModal(props) {
+    const {id} = props
     const [lineName, setLineName] = useState("")
 
     let update = async (e) => {
