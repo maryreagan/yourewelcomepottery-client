@@ -43,7 +43,7 @@ const theme = createTheme({
 
 function App() {
 const getAll = () => {
-  fetch("http://127.0.0.1:4000/products/all")
+  fetch("https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/products/all")
     .then((res) => res.json())
     .then((data) => {
       if(!data) setFlag(false);

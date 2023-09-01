@@ -25,7 +25,7 @@ function Cart( ) {
   }, [cart]);
 
   const checkout = async () => {
-    await fetch("http://localhost:4000/products/checkout", {
+    await fetch("https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/products/checkout", {
       method: "POST",
       headers: {
         "content-type": "application/json",

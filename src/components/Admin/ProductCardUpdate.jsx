@@ -54,7 +54,7 @@ const handleRemoveImages = () => {
 }
 
     let fetchData = async () => {
-        fetch("http://127.0.0.1:4000/products/all", {
+        fetch("https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/products/all", {
             method: "GET",
             headers: {
                 "Content-Type": "multipart/form-data",
@@ -92,7 +92,7 @@ const handleRemoveImages = () => {
 
         try {
             await axios.put(
-                `http://127.0.0.1:4000/products/update/${idContent}`,
+                `https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/products/update/${idContent}`,
                 formData,
                 {
                     headers: {
@@ -121,7 +121,7 @@ const handleRemoveImages = () => {
         getLines()
     }, [refresh])
     let getLines = () => {
-        fetch(`http://localhost:4000/line/`)
+        fetch(`https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/line/`)
         .then((res) => res.json())
         .then((data) => {
             console.log(data)
@@ -142,7 +142,7 @@ const handleRemoveImages = () => {
 
         try {
             await axios.put(
-                `http://127.0.0.1:4000/products/updateImg/${idContent}`,
+                `https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/products/updateImg/${idContent}`,
                 formData,
                 {
                     headers: {
@@ -162,7 +162,7 @@ const handleRemoveImages = () => {
         try {
             e.preventDefault();
             await axios.delete(
-                `http://127.0.0.1:4000/products/delete/${idContent}`,
+                `https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/products/delete/${idContent}`,
                 {
                     headers: {
                         Authorization: localStorage.getItem("token"),

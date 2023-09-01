@@ -12,7 +12,7 @@ function LineCreate() {
     const [deletion, setDelete] = useState(false)
     let upload = async (e) => {
         e.preventDefault()
-        let url = "http://localhost:4000/line/"
+        let url = "https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/line/"
         let body = {name: lineName}
         try {
             let response = await fetch(url, {
@@ -36,7 +36,7 @@ function LineCreate() {
 
 
     useEffect(() => {
-        let url = "http://localhost:4000/line/"
+        let url = "https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/line/"
         fetch(url, {
             method: "GET",
             headers: new Headers({
@@ -55,7 +55,7 @@ function LineCreate() {
     };
     useEffect(() => {
         try{
-            let url = `http://localhost:4000/line/${id}`
+            let url = `https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/line/${id}`
             fetch(url, {
                 method: "DELETE",
                 headers: new Headers({

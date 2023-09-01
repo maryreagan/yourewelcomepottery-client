@@ -18,7 +18,7 @@ function Contact() {
     let contactUs = async () => {
         try {
             await axios.post(
-                `http://127.0.0.1:4000/form/contactUs`,
+                `https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/form/contactUs`,
                 { name, email, message },
                 {
                     headers: {

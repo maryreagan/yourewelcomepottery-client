@@ -15,7 +15,7 @@ function Success() {
       quantities: quantities,
     };
 
-    fetch(`http://127.0.0.1:4000/products/retrieve`, {
+    fetch(`https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/products/retrieve`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

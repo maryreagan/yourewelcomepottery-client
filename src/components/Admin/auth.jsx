@@ -14,7 +14,7 @@ function Auth() {
     let [wrongCode , setWrongCode] = useState(false)
     let submitLogin = async e => {
         e.preventDefault();
-        let url = "http://127.0.0.1:4000/admin/login";
+        let url = "https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/admin/login";
         let body = { email, password };
     
         try {
@@ -50,7 +50,7 @@ function Auth() {
       let sendRecoveryEmail = async () => {
         try{
     
-          await axios.post(`http://127.0.0.1:4000/password/forgot/${email}`,{
+          await axios.post(`https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/password/forgot/${email}`,{
             OTP: generateOTP()
           })
           setForgotPassword(false);
@@ -76,7 +76,7 @@ function Auth() {
     
     let updateUser = async e => {
         e.preventDefault();
-        let url = `http://127.0.0.1:4000/admin/update/${email}`;
+        let url = `https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/admin/update/${email}`;
         let body = {password}
       
         try {

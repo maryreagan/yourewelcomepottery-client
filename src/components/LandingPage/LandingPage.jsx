@@ -15,7 +15,7 @@ function LandingPage() {
 
   const tagFilter = searchParams.get("tag");
   const getLines = () => {
-    fetch(`http://localhost:4000/line/`)
+    fetch(`https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/line/`)
     .then((res) => res.json())
     .then((data) => {
         console.log(data)

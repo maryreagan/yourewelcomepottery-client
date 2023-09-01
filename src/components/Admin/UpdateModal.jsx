@@ -7,7 +7,7 @@ function UpdateModal() {
 
     let update = async (e) => {
         e.preventDefault()
-        let url = `http://localhost:4000/line/${id}`
+        let url = `https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/line/${id}`
         let body = {name: lineName}
         try {
             let response = await fetch(url, {

@@ -40,7 +40,7 @@ useEffect(() => {
   console.log(lines)
 }, [refresh])
 let getLines = () => {
-  fetch(`http://localhost:4000/line/`)
+  fetch(`https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/line/`)
   .then((res) => res.json())
   .then((data) => {
       console.log(data)
@@ -79,7 +79,7 @@ const upload = async (e) => {
   }
   console.log(formData)
     try{
-            await axios.post('http://127.0.0.1:4000/products/create', 
+            await axios.post('https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/products/create', 
             formData,{
             headers: {
                 'Authorization':localStorage.getItem('token'),

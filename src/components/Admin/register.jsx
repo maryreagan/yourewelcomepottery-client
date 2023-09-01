@@ -11,7 +11,7 @@ let registerUser = async (e) => {
     let body = {email , password}
 
     try{
-    await axios.post('http://127.0.0.1:4000/admin/register',
+    await axios.post('https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/admin/register',
     body,{
         headers: {
             'Content-Type':'application/json'

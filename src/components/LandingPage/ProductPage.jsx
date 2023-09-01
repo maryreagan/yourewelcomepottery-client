@@ -16,7 +16,7 @@ function ProductPage() {
 
     //Get product from database
     let getProduct = async () => {
-        let url = `http://localhost:4000/products/${id}`
+        let url = `https://youre-welcome-pottery-server-5b5629123e07.herokuapp.com/products/${id}`
         let response = await fetch(url, {
             method: "GET",
             headers: new Headers({
