@@ -7,6 +7,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import IconButton from "@mui/material/IconButton";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useTheme } from "@mui/material/styles";
+import {Link} from "react-router-dom"
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -41,13 +42,15 @@ function ProductCard( { product, onAddToCart } ) {
   return (
     // On click, take user to product's individual page
     <Card sx={{ maxWidth: 300 }} elevation={24} >
+      <Link to={`/products/${product._id}`}>
       <CardMedia
-        onClick={reroute}
+        // onClick={reroute}
         component="img"
         style={{ height: 300, width: 300 }}
         image={product.multipleImgs[0]}
         alt={product.altText}
       />
+      </Link>
       <CardContent sx={{ backgroundColor: theme.palette.secondary.main }} to={`/products/${product._id}`}>
         <Typography gutterBottom variant="h6" component="div">
           {product.productName}

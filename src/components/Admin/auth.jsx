@@ -174,7 +174,7 @@ function Auth({updateLocalStorage, email, setEmail}) {
             onChange={e => setPassword(e.target.value)}
             placeholder="Product Name"
         />
-        <Button  variant='contained' type="submit" onClick={() => submitLogin}>Login </Button>
+        <Button  variant='contained' type="submit" onClick={submitLogin}>Login </Button>
         <Button  variant='contained' type='submit' onClick={() => setForgotPassword(true)}>Forgot Password</Button>
 
     </div>

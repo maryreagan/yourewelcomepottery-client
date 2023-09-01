@@ -64,13 +64,13 @@ function Cart( { cart, removeFromCart, quantityDecrement, handleAddToCart } ) {
           {cart.map((item, key) =>
           (
             
-            <Card key={key} sx={{ minWidth: 275, maxWidth: 100 }} elevation={24}>
+            <Card className="cart-card" key={key} sx={{ minWidth: 275, maxWidth: 100 }} elevation={24}>
               <CardContent
                 sx={{ backgroundColor: theme.palette.secondary.main }}
               >
                 <CardMedia
                   component="img"
-                  style={{ height: 150 }}
+                  style={{ height: 200 }}
                   image={picture[0]}
                   alt={item.altText}
                   src={item.multipleImgs[0]}

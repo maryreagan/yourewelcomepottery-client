@@ -3,6 +3,8 @@ import { Button} from "@mui/material";
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import "./ProductPage.css"
 
 function ProductPage({products, handleAddToCart }) {
@@ -44,11 +46,12 @@ function ProductPage({products, handleAddToCart }) {
 
     return (
         <div className='single-product'>
+            <div className="productContainer">
             <div id='img-container'>
                             
                             {multipleImgs && multipleImgs.length > 0 && (
-                                    <Button className='scroll-btn' onClick={handlePreviousImage} disabled={currentImageIndex === 0} variant ='text' startIcon={<NavigateBeforeIcon />} style={{paddingTop: '4em'}}>
-                                    Previous
+                                    <Button className='scroll-btn' onClick={handlePreviousImage} disabled={currentImageIndex === 0} variant ='text' startIcon={<ArrowBackIosIcon />} style={{paddingTop: '4em'}}>
+                                    
                                     </Button>
                                 )}
                                 
@@ -59,17 +62,18 @@ function ProductPage({products, handleAddToCart }) {
                                 )}
                                 
                             {multipleImgs && multipleImgs.length > 0 && (
-                                <Button className='scroll-btn' onClick={handleNextImage} disabled={currentImageIndex === multipleImgs.length} variant='text'  endIcon={<NavigateNextIcon />} style={{paddingTop: '4em'}}>
-                                Next
+                                <Button className='scroll-btn' onClick={handleNextImage} disabled={currentImageIndex === multipleImgs.length} variant='text'  endIcon={<ArrowForwardIosIcon />} style={{paddingTop: '4em'}}>
+                                
                                 </Button>
                             )}
                             </div>
-            <h1>{product.productName}</h1>
-            <h2>${product.price}</h2>
-            <h3>{product.description}</h3>
-            <Button onClick={() => handleAddToCart(product)} startIcon={<ShoppingCartIcon />}>
+            <h1 className="productName">{product.productName}</h1>
+            <h2 className="productPrice">${product.price}</h2>
+            <h3 className="productDesc">{product.description}</h3>
+            <Button variant="contained" className="addToCartButton"onClick={() => handleAddToCart(product)} startIcon={<ShoppingCartIcon />}>
             Add to Cart
           </Button>
+            </div>
 
 
         </div>
