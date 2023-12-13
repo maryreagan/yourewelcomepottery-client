@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/yourewelcomepottery-client/static/css/main.b2004eb3.css",
-    "main.js": "/yourewelcomepottery-client/static/js/main.cf336c48.js",
+    "main.js": "/yourewelcomepottery-client/static/js/main.e8e85637.js",
     "static/js/496.a9b68303.chunk.js": "/yourewelcomepottery-client/static/js/496.a9b68303.chunk.js",
     "static/media/studio.jpg": "/yourewelcomepottery-client/static/media/studio.5d6b912125c65a3e64a0.jpg",
     "static/media/headshot.jpg": "/yourewelcomepottery-client/static/media/headshot.0c5babf1138776de29d2.jpg",
@@ -10,11 +10,11 @@
     "static/media/Salsa-Regular.ttf": "/yourewelcomepottery-client/static/media/Salsa-Regular.df3181c697c1595c4515.ttf",
     "index.html": "/yourewelcomepottery-client/index.html",
     "main.b2004eb3.css.map": "/yourewelcomepottery-client/static/css/main.b2004eb3.css.map",
-    "main.cf336c48.js.map": "/yourewelcomepottery-client/static/js/main.cf336c48.js.map",
+    "main.e8e85637.js.map": "/yourewelcomepottery-client/static/js/main.e8e85637.js.map",
     "496.a9b68303.chunk.js.map": "/yourewelcomepottery-client/static/js/496.a9b68303.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b2004eb3.css",
-    "static/js/main.cf336c48.js"
+    "static/js/main.e8e85637.js"
   ]
 }
